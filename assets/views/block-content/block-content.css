@@ -1,0 +1,8 @@
+.block-content{
+    padding-top: var(--margin-large);
+    padding-bottom: var(--margin-xlarge);
+    
+    >.rte{
+        grid-column: container;    
+    }
+}

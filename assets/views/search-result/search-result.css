@@ -1,0 +1,26 @@
+
+.search-result{
+    padding-top: var(--margin-large);
+    padding-bottom: var(--margin-xlarge);
+    
+    ul{
+        grid-column: container;
+        display: grid;
+        grid-gap: var(--gap);
+    }
+    .btn-more{
+        grid-column: container;
+        justify-self: center;
+        margin-top: 40px;
+    }
+    @media (min-width: 700px){
+        ul{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (min-width: 1024px){
+        ul{
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
