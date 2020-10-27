@@ -4,11 +4,11 @@
 @custom-media --breakpoint-xlarge-up (min-width: 1200px);
 @custom-media --breakpoint-wide-up (min-width: 1440px);
 
-@custom-media --breakpoint-small-down (min-width: 576px);
-@custom-media --breakpoint-medium-down (min-width: 768px);
-@custom-media --breakpoint-large-down (min-width: 992px);
-@custom-media --breakpoint-xlarge-down (min-width: 1200px);
-@custom-media --breakpoint-wide-down (min-width: 1440px);
+@custom-media --breakpoint-small-down (max-width: 576px);
+@custom-media --breakpoint-medium-down (max-width: 768px);
+@custom-media --breakpoint-large-down (max-width: 992px);
+@custom-media --breakpoint-xlarge-down (max-width: 1200px);
+@custom-media --breakpoint-wide-down (max-width: 1440px);
 
 @custom-media --breakpoint-small-scoped (min-width: 576px) AND (max-width: 767px);
 @custom-media --breakpoint-medium-scoped (min-width: 768px) AND (max-width: 991px);

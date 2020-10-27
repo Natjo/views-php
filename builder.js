@@ -94,8 +94,7 @@ const core = {
     babel(result, dest){
         result = babel.transform(result, {
             minified: isProd ? true : false,
-            comments: false,
-            presets: [['@babel/preset-env']]
+            comments: false
         }).code;
         fs.ensureDirSync(path.dirname(dest));
         fs.writeFileSync(dest, result);

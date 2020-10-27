@@ -1,9 +1,0 @@
-.content-img{
-    figure{
-        grid-column: container;
-        margin-bottom: 20px;
-    }
-    .rte{
-        grid-column: container;
-    }
-}

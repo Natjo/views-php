@@ -40,7 +40,7 @@
     --margin-xlarge: 40px;
 }
 
-@media (--breakpoint-medium-up){
+@media (min-width: 768px){
     :root{
         --gap: 40px;
 

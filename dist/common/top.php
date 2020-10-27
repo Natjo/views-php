@@ -28,24 +28,6 @@
 
 </head>
 
-<?php
-global $navigation;
-$navigation = array(
-    array(
-        "name" => "Home",
-        "href" => "/"
-    ),
-    array(
-        "name" => "Contact",
-        "href" => "/contact"
-    ),
-    array(
-        "name" => "Articles",
-        "href" => "/archive"
-    ),
-);
-?>
-
-<?php include("common/views.php"); ?>
+<?php include("common/functions.php"); ?>
 
 <body>

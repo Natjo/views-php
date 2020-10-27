@@ -1,4 +1,5 @@
 
+import slider from '../../modules/slider/slider.js'
 // header
 const el = document.querySelector('header[role="banner"]');
 var scrollY = 0;
