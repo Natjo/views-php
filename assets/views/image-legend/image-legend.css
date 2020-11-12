@@ -1,0 +1,27 @@
+[data-view=image-legend]{
+    padding-top: var(--margin);
+    padding-bottom: var(--margin);
+
+    figure{
+        width: 100%;
+        grid-column: 4 / -4;
+        
+        img{
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+        figcaption{
+            padding: 0;
+            font-size: var(--font-size-small);
+        }
+    }
+
+    @media (--breakpoint-medium-up){
+        figure{
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+}

@@ -1,51 +1,59 @@
-
-import slider from '../../modules/slider/slider.js'
-// header
-const el = document.querySelector('header[role="banner"]');
+const header = document.querySelector('.header-main');
+const nav = document.querySelector('.nav-main');
+const btn_nav = header.querySelector('.btn-nav');
+var scrollDown = false;
 var scrollY = 0;
+var oldscrollY;
 var status = 0;
 var oldstatus;
-var elHeight;
+var trigger;
 
+const resize = () => trigger = header.clientHeight;
 
-
-const resize = () => elHeight = el.clientHeight;
-
-const change = () => status === 0 ? el.classList.remove('small') : el.classList.add('small');
+const change = () => {
+    scrollDown == 1 && header.classList.add('fixed');
+    if (status === 0) {
+        header.classList.remove('hide');
+        header.classList.remove('show');
+        header.classList.remove('fixed');
+    }
+    if (status === 1) {
+        header.classList.remove('show');
+        header.classList.add('hide');
+    }
+    if (status === 2) {
+        header.classList.remove('hide');
+        header.classList.add('show');
+    }
+};
 
 const scroll = () => {
     scrollY = window.pageYOffset;
-    status = scrollY > elHeight ? 1 : 0;
+    scrollDown = oldscrollY - scrollY > 0 ? true : false;
+    if (scrollY > trigger) status = scrollDown === false ? 1 : 2;
+    if (scrollY === 0) status = 0;
     oldstatus !== status && change();
     oldstatus = status;
+    oldscrollY = scrollY;
 };
+
+const open = () => {
+    document.body.classList.add('hasPopin'); 
+    btn_nav.classList.add('active');
+    nav.classList.add('open');
+};
+
+const close = () => {
+    document.body.classList.remove('hasPopin');
+    btn_nav.classList.remove('active');
+    nav.classList.remove('open');
+};
+
+btn_nav.onclick = () => btn_nav.classList.contains('active') ? close() : open();
 
 window.addEventListener('scroll', scroll, false);
 window.addEventListener('resize', resize, false);
+
 resize();
 
-
-// navigation
-const nav = document.querySelector('nav[role="navigation"]');
-const open = () => {
-    el.classList.add('open');
-    document.body.classList.add('hasPopin');
-    nav.classList.add('open');
-    nav.classList.remove('close');
-};
-const close = () => {
-    document.body.classList.remove('hasPopin');
-    nav.classList.remove('open');
-    nav.classList.add('close');
-    nav.addEventListener('animationend', () => {
-        nav.classList.remove('close');
-        el.classList.remove('open');
-    }, { once: true });
-};
-
-// btn navigation mobile
-const btn_nav = document.querySelector('.btn-nav');
-btn_nav.onclick = () => {
-    btn_nav.classList.toggle('active');
-    btn_nav.classList.contains('active') ? open() : close();
-};
+window.pageYOffset > trigger && header.classList.add('show');

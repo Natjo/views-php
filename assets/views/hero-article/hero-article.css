@@ -1,0 +1,36 @@
+[data-view=hero-article] {
+    margin-top: var(--margin-xlarge);
+    margin-bottom: var(--margin-small);
+    justify-items: center;
+
+    time,h1,.tag,.btn-back  {
+        grid-column: 2 / -2;
+    }
+    .btn-back {
+        margin-bottom: var(--margin);
+        justify-self: start;
+    }
+    time {
+        display: block;
+        margin-bottom: 20px;
+        font-weight: 800;
+        color: $color-primary;
+    }
+    h1 {
+        margin-bottom: 30px;
+    }
+    .tag {
+        color: #fff;
+        background: var(--color-third);
+        padding: 10px 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    picture {
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

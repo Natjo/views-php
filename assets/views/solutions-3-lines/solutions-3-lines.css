@@ -1,0 +1,10 @@
+/* @import url(/assets/blocks/section-header/section-header.css); */
+@import url(/assets/modules/swipe2grid/swipe2grid.css);
+/* @import url(/assets/blocks/card-solution/card-solution.css); */
+@import url(/assets/modules/swiper/swiper-custom.css);
+
+[data-view=solutions-3-lines]{
+    margin-top: var(--margin-xlarge);
+    margin-bottom: var(--margin-xlarge);
+    overflow: hidden;
+}

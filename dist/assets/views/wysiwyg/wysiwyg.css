@@ -1,0 +1,5 @@
+@import url(../../styles/rte.css);
+
+[data-view=wysiwyg] .rte{
+        grid-column: 4 / -4;
+    }

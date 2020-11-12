@@ -1,0 +1,10 @@
+[data-view=intro-text-image]{
+    padding-top: var(--margin-xlarge);
+    padding-bottom: var(--margin-xlarge);
+}
+   
+    [data-view=intro-text-image] .list-text-image {
+        grid-column: container;
+        display: grid;
+        grid-gap: var(--gap);
+    }

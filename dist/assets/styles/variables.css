@@ -1,61 +1,97 @@
-:root{
-
+:root {
     --container-width: 1280px;
-    --container-margin: 120px;
+    --container-margin: 20px;
 
-    --gap: 40px;
+    --gap: 20px;
 
-    --font-primary: 'Brown', sans-serif;
-    --font-secondary: 'Albra', sans-serif;
-    --font-icon: 'icomoon';
+    --font-primary: "Brown", sans-serif;
+    --font-secondary: "Albra", sans-serif;
+    --font-icon: "icomoon";
 
     --color-primary: #e8ae3a;
-    --color-secondary: #061927;
+    --color-secondary:#061927;
     --color-third: #054652;
-    --color-fourth: #D7DDE6;
-    --color-fifth: #EBF1F9;
-    --color-sixth: #B1C6D2;
+    --color-fourth: #d7dde6;
+    --color-fifth: #ebf1f9;
+    --color-sixth :#b1c6d2;
+
+    --color-0: #fff;
+    --color-1: #adf7c7;
+    --color-2: #77c5ef;
+    --color-3: #f9e193;
+    --color-4: #b1c6d2;
+    --color-5: #061927;
+    --color-6: #054652;
+    --color-7: #e8ae3a;
+    --color-8: #d7dde6;
+    --color-9: #ebf1f9;
 
     --color-gray-light: #f5f5f5;
     --color-gray: #ccc;
     --color-gray-dark: #555;
 
     --color-text: #000;
-    --color-error: #FF625A;
-    --color-warning: #FF625A;
+    --color-error: #ff625a;
+    --color-warning: #ff625a;
     --color-valid: #054652;
 
     --font-size-sxmall: 1.1rem;
     --font-size-small: 1.2rem;
     --font-size: 1.4rem;
     --font-size-medium: 1.6rem;
-    --font-size-large: 2rem;
+    --font-size-large: 2.3rem;
     --font-size-xlarge: 3rem;
-    --font-size-xxlarge: 3rem;
+    --font-size-xxlarge: 3.5rem;
 
     --margin-xsmall: 5px;
-    --margin-small: 10px;
+    --margin-small: 20px;
     --margin: 20px;
     --margin-large: 40px;
-    --margin-xlarge: 40px;
+    --margin-xlarge: 60px;
 }
 
-@media (min-width: 768px){
-    :root{
-        --gap: 40px;
+@media (min-width: 768px) {
+    :root {
+        --container-margin: 40px;
+        --gap: 30px;
 
-        --font-size-sxmall: 1.1rem;
-        --font-size-small: 1.2rem;
-        --font-size: 1.4rem;
-        --font-size-medium: 1.8rem;
-        --font-size-large: 2.2rem;
-        --font-size-xlarge: 3.4rem;
-        --font-size-xxlarge: 6rem;
+        --font-size-sxmall: 1.2rem;
+        --font-size-small: 1.4rem;
+        --font-size: 1.6rem;
+        --font-size-medium: 3.2rem;
+        --font-size-xxlarge: 4.3rem;
 
         --margin-xsmall: 10px;
         --margin-small: 20px;
         --margin: 40px;
         --margin-large: 60px;
         --margin-xlarge: 80px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        --container-margin: 120px;
+        --gap: 40px;
+        
+        --font-size-sxmall: 1.2rem;
+        --font-size-small: 1.4rem;
+        --font-size: 1.6rem;
+        --font-size-medium: 2.4rem;
+        --font-size-large: 2.6rem;
+        --font-size-xlarge: 3.8rem;
+        --font-size-xxlarge: 5.4rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --font-size-sxmall: 1.2rem;
+        --font-size-small: 1.4rem;
+        --font-size: 1.8rem;
+        --font-size-medium: 2.5rem;
+        --font-size-large: 2.8rem;
+        --font-size-xlarge: 4.2rem;
+        --font-size-xxlarge: 4.6rem;
     }
 }

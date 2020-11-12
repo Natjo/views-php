@@ -2,9 +2,19 @@
 
 define("THEME_URL", "/");
 
+function header_($args = null)
+{
+    include("common/header.php");
+}
+function footer_($args = null)
+{
+    include("common/footer.php");
+}
 /**
- * test if args exist
+ * Utils
  */
+
+//test if args exist
 function exist($arg)
 {
     if (isset($arg) && !empty($arg)) return true;
@@ -23,47 +33,49 @@ function exist($arg)
 $json = json_decode(file_get_contents("assets/views.json"), true);
 $views = array();
 
-function views($name, $args = null)
+function views($name, $args = null, $defer = false)
 {
+    global $json;
     global $views;
-
     include("./assets/views/$name/index.php");
     if (!in_array($name, $views)) {
-        array_push($views, $name);
+        $views[$name] = array(
+            "js" => $json[$name]["js"],
+            "css" => $json[$name]["css"],
+            "defer" => $defer
+        );
     }
 }
 
-function views_assets()
+function views_css()
 {
     global $views;
-    global $json;
-    $json_views = $json["views"];
-    $json_modules = $json["modules"];
-    $json_app = $json["app"];
-    echo "\r\t";
-
-    function insert($key)
-    {
-        if ($key["css"]) {
-            echo '<link href="' . $key["css"] . '" rel="stylesheet" type="text/css">' . "\r\t";
+    foreach ($views as $view) {
+        if ($view["css"]) {
+            echo '<link rel="stylesheet" href="' . $view["css"] . '">' . "\n";
         }
-        if ($key["js"]) {
-            echo '<script type="module" src="' . $key["js"] . '"></script>' . "\r\t";
-        }
-    }
-
-    for ($i = 0; $i < sizeof($views); $i++) {
-        $name = $views[$i];
-        $dependencies = $json_views[$name]["dependencies"];
-
-        if ($dependencies) {
-            for ($u = 0; $u < sizeof($dependencies); $u++) {
-                insert($json_modules[$dependencies[$u]]);
-            }
-        }
-        insert($json_views[$name]);
-    }
-    for ($i = 0; $i < sizeof($json_app); $i++) {
-        insert($json_modules[$json_app[$i]]);
     }
 }
+
+function views_js()
+{
+    global $views;
+    $arr = array();
+    foreach ($views as $key => $view) {
+        if ($view["js"] && !$view["defer"]) array_push($arr, $key);
+    }
+    return json_encode($arr);
+}
+
+
+function views_defer()
+{
+    global $views;
+    $arr = array();
+    foreach ($views as $key => $view) {
+        if ($view["js"] && $view["defer"]) array_push($arr, $key);
+    }
+    return json_encode($arr);
+}
+
+ob_start();

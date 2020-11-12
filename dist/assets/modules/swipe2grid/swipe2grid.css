@@ -1,0 +1,28 @@
+.swipe2grid {
+    padding: 0 var(--container-margin);
+}
+    
+    @media (max-width: 768px) {
+        .swipe2grid.swiper-container{
+            margin: 0 var(--container-margin);
+            height: 100%;
+            overflow: visible;
+            width: calc(70% - 20px);
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .swipe2grid > ul {
+            display: grid;
+            grid-column-gap: var(--gap);
+        }
+            .swipe2grid.grid3 > ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+    }
+    
+    @media (min-width: 992px) {
+            .swipe2grid.grid3 > ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
+    }

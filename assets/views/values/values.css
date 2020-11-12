@@ -1,0 +1,97 @@
+[data-view=values] {
+    margin: var(--margin-large) 0;
+    position: relative;
+    color: #fff;
+
+    h2{
+        margin-bottom: 8px;
+    }
+    .text{
+        margin-bottom: 20px;
+    }
+    picture{
+        z-index: 0;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+
+        li{
+            &:not(:last-child){
+                margin-bottom: 7vh;
+            }
+            img{
+                margin-bottom: 15px;
+                max-width: 290px;
+            }
+            .text{
+                line-height: 1.1;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @media (--breakpoint-medium-down) {
+        .content{
+            grid-column: 1 / -1;
+            padding: 80px 0;
+        }
+        ul{
+            margin-top: 60px;
+            margin-bottom: 60px;
+            grid-column: 1 / -1;
+            grid-row: 2;
+            
+            .text{
+                font-size: 1.6rem;
+            }
+        }
+        picture{
+            grid-column: 1 / -1;
+            grid-row: 2;
+            margin-left: calc(-1 * var(--container-margin));
+            margin-right: calc(-1 * var(--container-margin))
+        }
+    }
+    @media (--breakpoint-medium-up) {
+        .content{
+            grid-column: 1 / 7;
+            padding: 10px var(-gap) 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        picture{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: calc(50% - var(--gap) / 2);
+            height: 100%;
+        }
+        ul{
+            grid-column: 8 / -1;
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+
+            li{
+                width: 100%;
+                max-width: 290px;
+
+                .text{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

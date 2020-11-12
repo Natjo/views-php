@@ -1,0 +1,258 @@
+form:not(.custom):not(#loginform) .field {
+        position: relative;
+        display: flex;
+    }
+
+        form:not(.custom):not(#loginform) .field > label{
+            font-weight: 400;
+        }
+
+    form:not(.custom):not(#loginform) [type=text],
+    form:not(.custom):not(#loginform) [type=email],
+    form:not(.custom):not(#loginform) [type=password],
+    form:not(.custom):not(#loginform) [type=tel],
+    form:not(.custom):not(#loginform) [type=search],
+    form:not(.custom):not(#loginform) [type=date],
+    form:not(.custom):not(#loginform) [type=number],
+    form:not(.custom):not(#loginform) [type=url] {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        padding: 0 20px;
+        height: 50px;
+        width: 100%;
+        background: none;
+        background-color: #fff;
+        border: none;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    form:not(.custom):not(#loginform) [type=text]:focus,form:not(.custom):not(#loginform) [type=email]:focus,form:not(.custom):not(#loginform) [type=password]:focus,form:not(.custom):not(#loginform) [type=tel]:focus,form:not(.custom):not(#loginform) [type=search]:focus,form:not(.custom):not(#loginform) [type=date]:focus,form:not(.custom):not(#loginform) [type=number]:focus,form:not(.custom):not(#loginform) [type=url]:focus{
+            outline: 1px solid var(--color-third);
+        }
+
+    form:not(.custom):not(#loginform) [type=text].error,form:not(.custom):not(#loginform) [type=email].error,form:not(.custom):not(#loginform) [type=password].error,form:not(.custom):not(#loginform) [type=tel].error,form:not(.custom):not(#loginform) [type=search].error,form:not(.custom):not(#loginform) [type=date].error,form:not(.custom):not(#loginform) [type=number].error,form:not(.custom):not(#loginform) [type=url].error{
+            outline: 1px solid var(--color-error)!important;
+            color: var(--color-error);
+        }
+
+    form:not(.custom):not(#loginform) textarea {
+        font-family: inherit;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+		resize: vertical;
+        padding: 20px 0 20px 20px;
+        background: none;
+        background-color: #fff;
+		border: none;
+        margin: 0;
+        min-height: 160px;
+        font-weight: 300;
+    }
+
+    form:not(.custom):not(#loginform) textarea:focus{
+            outline: 1px solid var(--color-third);
+        }
+
+    form:not(.custom):not(#loginform) textarea.error{
+            border-color: var(--color-error);
+        }
+
+    form:not(.custom):not(#loginform) .field-error-msg{
+        color: var(--color-error);
+        margin-top: 6px;
+        font-size: 13px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+
+    form:not(.custom):not(#loginform) [type=submit] {
+        background: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        border: none;
+        color: inherit;
+        font-weight: 500;
+        padding: 0;
+        cursor: pointer;
+        padding-bottom: 4px; 
+    }
+
+    form:not(.custom):not(#loginform) .action {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    form:not(.custom):not(#loginform) .checkbox [type=checkbox]{
+            display: none;
+        }
+
+    form:not(.custom):not(#loginform) .checkbox .error-msg{
+            right: auto;
+            left: 0;
+        }
+
+    form:not(.custom):not(#loginform) .checkbox label{ 
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 300;
+        }
+
+    form:not(.custom):not(#loginform) .checkbox label:before{
+                content: "";
+                width: 22px;
+                height: 22px;
+                flex: 0 0 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid var(--color-third);
+                margin-right: 15px;
+                transition: all .2s ease;
+                margin-top: -2px;
+                color: #fff; 
+                font-size: .9rem;
+            }
+
+    form:not(.custom):not(#loginform) .checkbox label:hover:before{
+                    background: var(--color-third);
+                }
+
+    form:not(.custom):not(#loginform) .checkbox [type=checkbox]:checked + label:before{
+                content: "\e92e";
+                font-family: var(--font-icon);
+                border-color: var(--color-third); 
+                background: var(--color-third);
+            }
+
+    form:not(.custom):not(#loginform) select {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        height: 50px;
+		padding: 0 60px 0 20px;
+		outline: none;
+        width: 100%;
+        max-width: 312px;
+		border-radius: 0;
+		background: #fff url(/assets/img/caret.svg) no-repeat right 10px center;
+        background-size: auto 9px;
+        border: none;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    form:not(.custom):not(#loginform) select.error{
+            outline: 1px solid var(--color-error)!important;
+            color: var(--color-error);
+        }
+
+    form:not(.custom):not(#loginform) select option{
+            color: var(--color-third);
+            font-weight: 300;
+		}
+
+    form:not(.custom):not(#loginform) select:-moz-focusring, 
+        form:not(.custom):not(#loginform) select::-moz-focus-inner{
+			outline: none;
+			color: transparent !important;
+			text-shadow: 0 0 0 #000 !important;
+        }
+
+    form:not(.custom):not(#loginform) select::-ms-expand {
+      	    display: none;
+    	}
+
+    @media (max-width: 992px) {
+        form:not(.custom):not(#loginform) small{
+            font-size: 1.4rem;
+        }
+        form:not(.custom):not(#loginform) .field{
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+            form:not(.custom):not(#loginform) .field >label{
+                margin-bottom: 5px;
+                padding-right: 20px;
+            } 
+    }
+
+    @media (min-width: 992px) {
+        form:not(.custom):not(#loginform) [type=text],
+        form:not(.custom):not(#loginform) [type=email],
+        form:not(.custom):not(#loginform) [type=password],
+        form:not(.custom):not(#loginform) [type=tel],
+        form:not(.custom):not(#loginform) [type=search],
+        form:not(.custom):not(#loginform) [type=date],
+        form:not(.custom):not(#loginform) [type=number],
+        form:not(.custom):not(#loginform) [type=url],
+        form:not(.custom):not(#loginform) textarea,
+        form:not(.custom):not(#loginform) select{
+            max-width: 60%;
+        }
+        form:not(.custom):not(#loginform) .field{
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+            form:not(.custom):not(#loginform) .field >label{
+                height: 50px;
+                display: flex;
+                align-items: center;
+            } 
+    }
+
+    form:not(.custom):not(#loginform) input:-webkit-autofill,
+    form:not(.custom):not(#loginform) input:-webkit-autofill:hover,
+    form:not(.custom):not(#loginform) input:-webkit-autofill:focus,
+    form:not(.custom):not(#loginform) textarea:-webkit-autofill,
+    form:not(.custom):not(#loginform) textarea:-webkit-autofill:hover,
+    form:not(.custom):not(#loginform) textarea:-webkit-autofill:focus,
+    form:not(.custom):not(#loginform) select:-webkit-autofill,
+    form:not(.custom):not(#loginform) select:-webkit-autofill:hover,
+    form:not(.custom):not(#loginform) select:-webkit-autofill:focus {
+        -webkit-text-fill-color: inherit;
+        box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+        background-color: rgba(255, 255, 255, 0);
+        -webkit-transition: background-color 5000s ease-in-out 0s;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    form:not(.custom):not(#loginform) ::-moz-placeholder {
+        font-style: normal;
+        font-family: inherit;
+        opacity: .5;
+        font-weight: 300;
+        color: var(--color-third);
+        font-size: inherit;
+    }
+
+    form:not(.custom):not(#loginform) ::placeholder {
+        font-style: normal;
+        font-family: inherit;
+        opacity: .5;
+        font-weight: 300;
+        color: var(--color-third);
+        font-size: inherit;
+    }
+
+    form:not(.custom):not(#loginform) .error::-moz-placeholder {
+        color: var(--color-error);
+    }
+
+    form:not(.custom):not(#loginform) .error::placeholder {
+        color: var(--color-error);
+    }

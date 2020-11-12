@@ -1,0 +1,107 @@
+.rte {
+    grid-column: container;
+
+    hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-bottom: #ccc 1px solid;
+    }
+
+    .intro {
+        display: block;
+        font-weight: 400;
+        font-size: 2rem;
+        color: var(--color-third);
+        line-height: 1.25;
+        margin-bottom: var(--margin-xsmall);
+    }
+    .signature {
+        display: block;
+        color: var(--color-third);
+        font-weight: 800;
+        font-style: italic;
+        text-align: center;
+        margin: var(--margin) 0;
+    }
+    h2 {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-large);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-top: 40px;
+        margin-bottom: var(--margin-xsmall);
+    }
+    h3 {
+        font-size: 1.6rem;
+        color: var(--color-third);
+        font-size: var(--font-size);
+        margin-bottom: var(--margin-xsmall);
+    }
+    p {
+        margin-bottom: var(--margin-small);
+    }
+    img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    b,
+    strong {
+        font-weight: 800;
+    }
+    a {
+        color: var(--color-primary);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    ul,
+    ol {
+        margin-bottom: var(--margin-small);
+        li {
+            padding-left: 30px;
+            position: relative;
+
+            &:not(:last-child) {
+                margin-bottom: var(--margin-xsmall);
+            }
+            &:before {
+                content: "\e901";
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 0;
+                font-family: var(--font-icon);
+                color: var(--color-primary);
+                font-size: 1.1rem;
+            }
+        }
+    }
+    blockquote {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-large);
+        color: var(--color-primary);
+        text-align: center;
+        line-height: 1.2;
+        font-weight: 800;
+        margin: var(--margin) 0;
+    }
+
+    > *:nth-child(1) {
+        margin-top: 0;
+    }
+    > *:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
+    @media (--breakpoint-medium-down) {
+        .signature {
+            font-size: 1.8rem;
+        }
+    }
+    @media (--breakpoint-medium-up) {
+        .signature {
+            font-size: 2.4rem;
+        }
+    }
+}

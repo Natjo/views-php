@@ -1,67 +1,57 @@
-/* Rufina */
+/* Albra */
 @font-face {
-    font-family: "Rufina";
-    src: url(../fonts/Rufina-Stencil-Regular.woff2) format("woff2"), url(../fonts/Rufina-Stencil-Regular.woff) format("woff");
-    font-weight: 400;
+    font-family: 'Albra', Arial;
+    src: url(../fonts/Albra-Semi.woff2) format('woff2'), url(../fonts/Albra-Semi.woff) format('woff');
+    font-weight: 600;
     font-style: normal;
-    font-stretch: normal;
 }
 @font-face {
-    font-family: "Rufina";
-    src: url(../fonts/Rufina-Stencil-Regular-Italic.woff2) format("woff2"), url(../fonts/Rufina-Stencil-Regular-Italic.woff) format("woff");
-    font-weight: 400;
-    font-style: italic;
-    font-stretch: normal;
-}
-@font-face {
-    font-family: "Rufina";
-    src: url(../fonts/Rufina-Stencil-Bold.woff2) format("woff2"), url(../fonts/Rufina-Stencil-Bold.woff) format("woff");
-    font-weight: 700;
+    font-family: 'Albra', Arial;
+    src: url(../fonts/Albra-Bold.woff2) format('woff2'), url(../fonts/Albra-Bold.woff) format('woff');
+    font-weight: 800;
     font-style: normal;
-    font-stretch: normal;
-}
-@font-face {
-    font-family: "Rufina";
-    src: url(../fonts/Rufina-Stencil-Bold-Italic.woff2) format("woff2"), url(../fonts/Rufina-Stencil-Bold-Italic.woff) format("woff");
-    font-weight: 700;
-    font-style: italic;
-    font-stretch: normal;
 }
 
-/* CeraPro */
+/* Brown */
 @font-face {
-    font-family: "CeraPro";
-    src: url(../fonts/CeraPro-Light.woff2) format("woff2"), url(../fonts/CeraPro-Light.woff) format("woff");
+    font-family: 'Brown', Arial;
+    src: url(../fonts/BrownLLWeb-Light.woff2) format('woff2'), url(../fonts/BrownLLWeb-Light.woff) format('woff');
     font-weight: 300;
     font-style: normal;
-    font-stretch: normal;
 }
-
 @font-face {
-    font-family: "CeraPro";
-    src: url(../fonts/CeraPro-Regular.woff2) format("woff2"), url(../fonts/CeraPro-Regular.woff) format("woff");
+    font-family: 'Brown', Arial;
+    src: url(../fonts/BrownLLWeb-Regular.woff2) format('woff2'), url(../fonts/BrownLLWeb-Regular.woff) format('woff');
     font-weight: 400;
     font-style: normal;
-    font-stretch: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro";
-    src: url(../fonts/CeraPro-Italic.woff2) format("woff2"), url(../fonts/CeraPro-Italic.woff) format("woff");
+    font-family: 'Brown', Arial;
+    src: url(../fonts/BrownLLWeb-Italic.woff2) format('woff2'), url(../fonts/BrownLLWeb-Italic.woff) format('woff');
     font-weight: 400;
     font-style: italic;
-    font-stretch: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro";
-    src: url(../fonts/CeraPro-Medium.woff2) format("woff2"), url(../fonts/CeraPro-Medium.woff) format("woff");
-    font-weight: 500;
+    font-family: 'Brown', Arial;
+    src: url(../fonts/BrownLLWeb-Bold.woff2) format('woff2'), url(../fonts/BrownLLWeb-Bold.woff) format('woff');
+    font-weight: 800;
     font-style: normal;
-    font-stretch: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: "CeraPro";
-    src: url(../fonts/CeraPro-Bold.woff2) format("woff2"), url(../fonts/CeraPro-Bold.woff) format("woff");
-    font-weight: 700;
+    font-family: 'Brown', Arial;
+    src: url(../fonts/BrownLLWeb-BoldItalic.woff2) format('woff2'), url(../fonts/BrownLLWeb-BoldItalic.woff) format('woff');
+    font-weight: 800;
+    font-style: italic;
+
+}
+
+/* icomoon */
+@font-face {
+    font-family: 'icomoon';
+    src: url(../fonts/icomoon.woff2) format('woff2'), url(../fonts/icomoon.woff) format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-stretch: normal;
 }

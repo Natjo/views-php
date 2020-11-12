@@ -1,0 +1,29 @@
+[data-view=video] {
+    padding-bottom: var(--margin-xlarge);
+
+    .videoPopin {
+        grid-column: 2 / -2;;
+        position: relative;
+        cursor: pointer;
+
+        picture {
+            position: relative;
+            z-index: 1;
+        }
+        img {
+            width: 100%;
+        }
+        &:before {
+            content: "\e910";
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            font-size: 6rem;
+            font-family: var(--font-icon);
+            transform: translate(-50%, -50%);
+        }
+    }
+}

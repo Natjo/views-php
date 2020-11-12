@@ -1,0 +1,33 @@
+[data-view="hero-page"] {
+    text-align: center;
+
+    h1 {
+        margin-bottom: var(--margin-small);
+    }
+    .intro {
+        color: var(--color-third);
+        font-weight: 400;
+    }
+
+    @media (--breakpoint-medium-down) {
+        padding-top: 140px;
+        padding-bottom: 20px;
+        h1 {
+            grid-column: 1 / -1;
+        }
+        .intro {
+            grid-column: 1 / -1;
+        }
+    }
+    @media (--breakpoint-medium-up) {
+        padding-top: 230px;
+        padding-bottom: 60px;
+
+        h1 {
+            grid-column: 3 / -3;
+        }
+        .intro {
+            grid-column: 3 / -3;
+        }
+    }
+}

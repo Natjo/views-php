@@ -10,47 +10,30 @@ const watch = require('node-watch');
 
 const src = 'assets/';
 const dist = 'dist/';
-const bundle = 'app.js';
 
 const isProd = process.argv[2] == '--prod' ? true : false;
 
 const json = {
-    datas: {
-        modules: {},
-        views: {},
-        app: []
-    },
-    add(key, name, filename, ext){
+    datas: {},
+    add(name, filename, ext){
         const dir = filename.replace(ext, '')
-        if(!this.datas[key][dir] && ext != '.php') this.datas[key][dir] = {
+        if(!this.datas[dir] && ext != '.php') this.datas[dir] = {
             js: '',
-            css: '',
-            dependencies: []
+            css: ''
         };
-        if(ext == '.js'){
-            this.datas[key][dir].js = name;
-            key == 'views' && this.dependencies(this.datas[key][dir]['dependencies'], name);
-        }
-        if(ext == '.css') this.datas[key][dir].css = name; 
-    },
-    dependencies(arr, name){
-        const content = fs.readFileSync(name, 'utf8');
-        const matches = content.matchAll(/\/modules\/(.*?)\//g);
-        Array.from(matches, x => arr.push(x[1]))
+        if(ext == '.js') this.datas[dir].js = name;
+        if(ext == '.css') this.datas[dir].css = name; 
     },
     create: () => fs.writeFileSync(`${dist}${src}views.json`, JSON.stringify(json.datas))
 }
 
 const core = {
+    styles: [],
     initTime: new Date(),
     compile(file, dist_name, ext){
-        if(ext == '.js'){
-            this.babel(fs.readFileSync(file, 'utf8'), dist_name);
-        } else if(ext == '.css'){
-            this.postcss(fs.readFileSync(file, 'utf8'), dist_name);
-        } else{
-            fs.copySync(file, dist_name);
-        }
+        if(ext == '.js') this.babel(fs.readFileSync(file, 'utf8'), dist_name);
+        else if(ext == '.css') this.postcss(fs.readFileSync(file, 'utf8'), dist_name);
+        else fs.copySync(file, dist_name);
     },
     dirScan(dir) {
         const recursive = dir => {
@@ -65,12 +48,8 @@ const core = {
                         const name = file.replace(`${__dirname}/`, '');
                         const filename = path.parse(name).base;
                         const ext = path.extname(filename);
-          
-                        if(/\/views\//.test(file)) json.add('views', name, filename, ext);
-                        if(/\/modules\//.test(file)) json.add('modules', name, filename, ext);
-                        filename == bundle && json.dependencies(json.datas['app'], name);
-                        
-                        core.compile(file, dist + name, ext);
+                        if(/\/views\//.test(file)) json.add(name, filename, ext);
+                        core.compile(file, dist + name, ext); 
                     }
                 }
             });
@@ -125,6 +104,16 @@ const core = {
 
 core.rmDir(`${dist}${src}`);
 core.dirScan(src);
+/*
+console.log(core.styles);
+var tt = "";
+for(let file of core.styles){
+    tt += fs.readFileSync(file, 'utf8');
+}
+
+core.postcss(tt, dist + "assets/styles/styles.css");
+*/
+
 json.create();
 console.log(`${core.time()}s`);  
 
@@ -149,7 +138,7 @@ watch(src, {recursive: true}, (evt, file) => {
     isFile && evt == 'remove' ? fs.unlinkSync(dist_file) : core.rmDir(dist_file);
 
     // update json
-    if(folder == 'views' && ext == '.js'){
+    /*if(folder == 'views' && ext == '.js'){
         json.datas[folder][dir]['dependencies'] = [];
         json.dependencies(json.datas[folder][dir]['dependencies'], file);
         json.create();
@@ -158,7 +147,7 @@ watch(src, {recursive: true}, (evt, file) => {
         json.datas['app'] = [];
         json.dependencies(json.datas['app'], file);
         json.create();
-    }
+    }*/
  
     core.console(folder,filename,evt);
 });

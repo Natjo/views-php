@@ -1,21 +1,36 @@
-<?php include("common/top.php"); ?>
+<?php include("common/functions.php"); ?>
 
-    <?php views('header', $args); ?>
+<?php
+header_(array("isLight" => false));
+?>
 
-    <main>
-        <section>
-            <?php
-            views('stage', array(
-                "title" => "Nous contacter",
-                "image" => "https://picsum.photos/id/44/1200/400"
-            ));
-            ?>
+<?php
+views('breadcrumb');
+?>
 
-            <?php views('block-contact');?>
+<?php
+views('background', array(
+    "color" => "color-0",
+    "pattern" => "pattern-1",
+    "bg" => "bg-1"
+));
+?>
+<?php include("styleguide/grid-viewer.php"); ?>
+<main role="main">
+    <section>
 
-        </section>
-    </main>
+        <?php
+        views('hero-page', array(
+            "title" => "Parlons-nous",
+            "intro" => ""
+        ));
+        ?>
 
-    <?php views('footer'); ?>
+        <?php
+        views('block-contact');
+        ?>
 
-<?php include("common/bottom.php"); ?>
+    </section>
+</main>
+
+<?php footer_(); ?>
