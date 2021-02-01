@@ -1,6 +1,4 @@
-<!-- rgpd manage popin -->
-
-<template id="rgpd-manage">
+<div id="rgpd-manage">
 
     <div class="box">
 
@@ -64,7 +62,7 @@
                 </div>
             </div>
 
-            <input type="checkbox" id="pref-0" name="pref-0" value="pref" data-cookies="_pref1,_pref2" data-accept="Accept" data-denied="Denied">
+            <input type="checkbox" id="pref-0" name="pref-0" value="pref" data-cookies="_pref1,_pref2">
 
         </section>
 
@@ -89,7 +87,7 @@
                 </div>
             </div>
 
-            <input type="checkbox" id="statistic-0" name="statistic-0" value="statistic" data-cookies="_stat1,_stat2" data-accept="Accept" data-denied="Denied">
+            <input type="checkbox" id="statistic-0" name="statistic-0" value="statistic" data-cookies="_stat1,_stat2">
 
         </section>
 
@@ -114,7 +112,7 @@
                 </div>
             </div>
 
-            <input type="checkbox" id="marketing-0" name="marketing-0" value="marketing" data-cookies="_market1,_market2" data-accept="Accept" data-denied="Denied">
+            <input type="checkbox" id="marketing-0" name="marketing-0" value="marketing" data-cookies="_market1,_market2">
 
         </section>
 
@@ -146,10 +144,9 @@
         </footer>
 
     </div>
-</template>
+</div>
 
-<!-- rgpd modal alert-->
-<template id="rgpd-modal">
+<div id="rgpd-modal">
     <div class="text">
         <h2 class="tl2">Gestion des cookies</h2>
         <p>
@@ -162,4 +159,4 @@
         <button type="reset" class="btn-refuse btn-primary">Je refuse</button>
         <button type="button" class="btn-accept btn-primary">J'acccepte</button>
     </div>
-</template>
+</div>

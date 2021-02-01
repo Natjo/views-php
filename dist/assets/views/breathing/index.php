@@ -1,4 +1,4 @@
-<section data-view="breathing">
+<section class="breathing" data-view="breathing">
     <div class="content container">
         <?php if (exist($args['text'])) : ?>
             <div class="text"><?= $args['text']; ?></div>

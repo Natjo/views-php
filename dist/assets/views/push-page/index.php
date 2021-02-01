@@ -1,4 +1,4 @@
-<section data-view="intro-other-page" style="background-color: <?= $args["color"]; ?>">
+<section class="push-page" data-view="push-page" style="background-color: <?= $args["color"]; ?>">
     <div class="container grid">
         <div class="content">
             <?php if (exist($args["title"])) : ?>

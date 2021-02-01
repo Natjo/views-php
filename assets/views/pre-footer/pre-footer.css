@@ -1,7 +1,7 @@
 [data-view=pre-footer] {
-    background: var(--color-sixth);
+    background: var(--color-6);
     position: relative;
-    margin-bottom: -40px;
+    margin-bottom: calc(-1 * var(--margin-xlg));
 
     .picto {
         position: absolute;
@@ -21,6 +21,7 @@
         background-position: 100% 0;
         background-color: transparent;
         background-size: auto 100%;
+        font-size: var(--font-size-lg);
 
         &:first-of-type {
             background-image: url(/assets/img/pre-footer/prev.svg);
@@ -29,13 +30,14 @@
             background-image: url(/assets/img/pre-footer/next.svg);
         }
     }
-    @media (--breakpoint-small-down) {
+    @media (--breakpoint-md-down) {
         a {
             height: 180px;
-            font-size: 2.6rem;
         }
     }
-    @media (--breakpoint-small-up) {
+  
+    @media (--breakpoint-md-up) {
+        height: 175px;
         height: 120px;
         display: flex;
 
@@ -43,16 +45,6 @@
             justify-content: center;
             width: 50%;
             height: 100%;
-            font-size: 1.8rem;
         }
-    }
-    @media (--breakpoint-medium-up) {
-        height: 175px;
-        a {
-            font-size: 2.8rem;
-        }
-    }
-    @media (--breakpoint-large-up) {
-        margin-bottom: -80px;
     }
 }

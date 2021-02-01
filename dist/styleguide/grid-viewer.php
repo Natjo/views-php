@@ -16,17 +16,19 @@
 </div>
 <style>
     .grid-viewer {
+        box-sizing: border-box;
         position: fixed;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 10000;
-        padding: 0 var(--container-margin);
+        padding: 0 var(--ctr-margin);
         pointer-events: none;
     }
     .grid-viewer>div {
+        box-sizing: border-box;
         position: relative;
-        max-width: var(--container-width);
+        max-width: var(--ctr-width);
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -35,7 +37,7 @@
     }
     .grid-viewer>div:before, .grid-viewer>div:after{
         content:"";
-        width: var(--container-margin);
+        width: var(--ctr-margin);
         height: 100%;
         display:block;
         position: absolute;

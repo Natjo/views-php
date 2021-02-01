@@ -1,4 +1,4 @@
-<section data-view="intro-text-image">
+<section class="intro-text-image" data-view="intro-text-image">
     <?php
     views('section-header', array(
         "title" => $args["title"],

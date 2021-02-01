@@ -1,6 +1,6 @@
 [data-view=keywords] {
-    padding-top: var(--margin-xlarge);
-    padding-bottom: var(--margin-xlarge);
+    padding-top: var(--margin-xlg);
+    padding-bottom: var(--margin-xlg);
 }
     
     [data-view=keywords] .keywords {
@@ -13,9 +13,9 @@
         }
     
     [data-view=keywords] button {
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 800;
-        -webkit-text-stroke: 1px var(--color-primary);
+        -webkit-text-stroke: 1px var(--color-1);
         -webkit-text-fill-color: transparent;
         transition: all 0.3s ease;
         text-align: left;
@@ -23,7 +23,7 @@
     
     [data-view=keywords] button.active,
         [data-view=keywords] button:hover {
-            -webkit-text-fill-color: var(--color-primary);
+            -webkit-text-fill-color: var(--color-1);
         }
     
     [data-view=keywords] button.active + .panel {

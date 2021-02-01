@@ -1,6 +1,6 @@
 [data-view=keywords] {
-    padding-top: var(--margin-xlarge);
-    padding-bottom: var(--margin-xlarge);
+    padding-top: var(--margin-xlg);
+    padding-bottom: var(--margin-xlg);
     
     .keywords {
         position: relative;
@@ -13,23 +13,23 @@
         }
     }
     button {
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 800;
-        -webkit-text-stroke: 1px var(--color-primary);
+        -webkit-text-stroke: 1px var(--color-1);
         -webkit-text-fill-color: transparent;
         transition: all 0.3s ease;
         text-align: left;
 
         &.active,
         &:hover {
-            -webkit-text-fill-color: var(--color-primary);
+            -webkit-text-fill-color: var(--color-1);
         }
         &.active + .panel {
             opacity: 1;
         }
     }
 
-    @media (--breakpoint-medium-down) {
+    @media (--breakpoint-md-down) {
         button {
             font-size: 3.4rem;
         }
@@ -39,7 +39,7 @@
             transition: all 0.2s ease-in-out;
         }
     }
-    @media (--breakpoint-medium-up) {
+    @media (--breakpoint-md-up) {
         button {
             font-size: 4.4rem;
             line-height: 1;

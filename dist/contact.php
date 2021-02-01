@@ -1,7 +1,7 @@
-<?php include("common/functions.php"); ?>
-
 <?php
-header_(array("isLight" => false));
+global $isLight;
+$isLight = true;
+include("common/header.php"); 
 ?>
 
 <?php
@@ -33,4 +33,4 @@ views('background', array(
     </section>
 </main>
 
-<?php footer_(); ?>
+<?php include("common/footer.php"); ?>

@@ -1,6 +1,6 @@
 [data-view=key-number] {
-    padding-top: var(--margin-xlarge);
-    padding-bottom: var(--margin-xlarge);
+    padding-top: var(--margin-xlg);
+    padding-bottom: var(--margin-xlg);
 }
 
     [data-view=key-number] .item {
@@ -8,8 +8,7 @@
     }
 
     [data-view=key-number] .line{
-        grid-auto-columns: repeat(12, 1fr);
-        grid-gap: var(--gap);
+        grid-row-gap: var(--margin-lg);
     }
 
     @media (max-width: 768px) {
@@ -17,37 +16,33 @@
             display: block;
         }
         [data-view=key-number] .item {
-            margin-bottom: 50px;
+            grid-column:  1 / -1;
         }
     }
 
     @media (min-width: 768px) {
-            
-            [data-view=key-number] .item:nth-child(1){
-                grid-column: 2 / 6;
+            [data-view=key-number] .item:nth-child(4n+1){
+                grid-column:  2 / span 4;
             }
-            [data-view=key-number] .item:nth-child(2){
-                grid-column: 7 / -3;
+            [data-view=key-number] .item:nth-child(4n+2){
+                grid-column:  7 /span 4;
             }
-            [data-view=key-number] .item:nth-child(3){
-                grid-column: 2 / 6;
+            [data-view=key-number] .item:nth-child(4n+3){
+                grid-column:  3 / span 4;
             }
-            [data-view=key-number] .item:nth-child(4){
-                grid-column: 7 / -3;
-            }
-            [data-view=key-number] .line:not(:last-of-type) {
-                margin-bottom: 80px;
+            [data-view=key-number] .item:nth-child(4n+4){
+                grid-column:  8 /span 4;
             }
     }
 
 .block-key-number {
-    border-bottom: 2px solid var(--color-third);
+    border-bottom: 2px solid var(--color-3);
     height: 100%;
 }
 
 .block-key-number .number {
         font-family: var(--font-secondary);
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 800;
         line-height: 1;
         margin-bottom: 6px;

@@ -1,5 +1,5 @@
-[data-view=breathing] {
-    background: var(--color-fifth);
+.breathing {
+    background: var(--color-5);
     text-align: center;
     position: relative;
     display: flex;
@@ -14,13 +14,13 @@
     .text {
         font-family: var(--font-secondary);
         line-height: 1.2;
-        font-size: var(--font-size-xxlarge);
+        font-size: var(--font-size-xxlg);
     }
     .signature {
-        margin-top: var(--margin-large);
-        color: var(--color-third);
+        margin-top: var(--margin-lg);
+        color: var(--color-3);
         font-style: italic;
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-lg);
     }
     picture {
         position: absolute;

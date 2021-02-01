@@ -1,10 +1,10 @@
 .swipe2grid {
-    padding: 0 var(--container-margin);
+    padding: 0 var(--ctr-margin);
 }
     
     @media (max-width: 768px) {
         .swipe2grid.swiper-container{
-            margin: 0 var(--container-margin);
+            margin: 0 var(--ctr-margin);
             height: 100%;
             overflow: visible;
             width: calc(70% - 20px);

@@ -27,7 +27,7 @@
         }
     }
  
-    @media (--breakpoint-small-up) {
+    @media (--breakpoint-sm-up) {
         grid-template-columns: 1fr [picture]2fr;
    
         &:not(.reverse){
@@ -39,7 +39,7 @@
         }
     }
 
-    @media (--breakpoint-small-up) {
+    @media (--breakpoint-sm-up) {
         grid-template-columns: 1fr [picture]1fr;
         &:not(.reverse){
             grid-template-columns: 1fr [picture]1fr;

@@ -1,9 +1,9 @@
-[data-view=intro-text-image]{
-    padding-top: var(--margin-xlarge);
-    padding-bottom: var(--margin-xlarge);
+.intro-text-image{
+    padding-top: var(--margin-xlg);
+    padding-bottom: var(--margin-xlg);
    
     .list-text-image {
-        grid-column: container;
+        grid-column: 1 / -1;
         display: grid;
         grid-gap: var(--gap);
     }

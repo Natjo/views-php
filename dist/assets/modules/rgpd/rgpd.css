@@ -1,4 +1,4 @@
-.rgpd-modal{
+#rgpd-modal{
 	position: fixed;
 	z-index: 1000;
 	right: 20px;
@@ -12,29 +12,29 @@
 	box-shadow: 0 0 40px rgba(0,0,0,0.15);
 }
 
-	.rgpd-modal h2{
-		margin-bottom: var(--margin-small);
+	#rgpd-modal h2{
+		margin-bottom: var(--margin-sm);
 	}
 
-	.rgpd-modal p{
-		margin-bottom: var(--margin-xsmall);
+	#rgpd-modal p{
+		margin-bottom: var(--margin-xsm);
 	}
 
-	.rgpd-modal.active{
+	#rgpd-modal.active{
 		display: block;
 	}
 
-	.rgpd-modal [type=reset]{
+	#rgpd-modal [type=reset]{
 		opacity: .8;
 	}
 
-	.rgpd-modal .action{
-		margin-top: var(--margin-small);
+	#rgpd-modal .action{
+		margin-top: var(--margin-sm);
 		display: flex;
 		justify-content: space-between;
 	}
 
-	@media (min-width: 768px){.rgpd-modal{
+	@media (min-width: 768px){#rgpd-modal{
 		max-width: 480px
 }
 	}
@@ -71,7 +71,7 @@
 	}
 }
 
-.rgpd-manage{
+#rgpd-manage{
 	position: fixed;
 	z-index: 5000;
 	left: 0;
@@ -80,57 +80,58 @@
 	height: 100%;
 	display: none;
 	opacity: 0;
+	box-sizing: border-box;
 }
 
-.rgpd-manage.open{
+#rgpd-manage.open{
 		display: flex;
 		-webkit-animation: rgpd-fadeIn .2s ease .1s both;
 		        animation: rgpd-fadeIn .2s ease .1s both;
 	}
 
-.rgpd-manage.close{
+#rgpd-manage.close{
 		-webkit-animation: rgpd-fadeOut .2s ease .1s both;
 		        animation: rgpd-fadeOut .2s ease .1s both;
 	}
 
-.rgpd-manage .box{
+#rgpd-manage .box{
 		position: relative;
 		max-height: 100%;
-		max-width: var(--container-width);	
+		max-width: var(--ctr-width);	
 		overflow: hidden;
 		overflow-y: auto;
 		background: #fff;
 		padding: var(--margin) var(--margin) 0;
 	}
 
-.rgpd-manage header{
+#rgpd-manage header{
 		margin-bottom: var(--margin);
 	}
 
-.rgpd-manage section{
+#rgpd-manage section{
 		margin-bottom: var(--margin);
 		display: flex;
 		align-items: flex-start;
 		flex-wrap: wrap;
 	}
 
-.rgpd-manage h1{
-		font-size: var(--font-size-large);
-		margin-bottom:  var(--margin-small);
+#rgpd-manage h1{
+		font-size: var(--font-size-lg);
+		margin-bottom:  var(--margin-sm);
 		font-weight: 800;
 	}
 
-.rgpd-manage h2{
-		font-size: var(--font-size-medium);
-		margin-bottom: var(--margin-small);
+#rgpd-manage h2{
+		font-size: var(--font-size-md);
+		margin-bottom: var(--margin-sm);
 		font-weight: 800;
 	}
 
-.rgpd-manage .content{
+#rgpd-manage .content{
 		flex: 1;
 	}
 
-.rgpd-manage .details{
+#rgpd-manage .details{
 		position: relative;
 		width: 100%;
 		transform: translateX(0);
@@ -139,7 +140,7 @@
 		overflow-y: auto;
 	}
 
-.rgpd-manage .details .btn-detail{
+#rgpd-manage .details .btn-detail{
 			-webkit-appearance: none;
 			   -moz-appearance: none;
 			        appearance: none;
@@ -153,21 +154,21 @@
 			padding-right: 2px;
 		}
 
-.rgpd-manage .details .btn-detail.active{
+#rgpd-manage .details .btn-detail.active{
 				font-weight: 800;
 			}
 
-.rgpd-manage .details .btn-detail:hover{
+#rgpd-manage .details .btn-detail:hover{
 				text-decoration: none;
 			}
 
-.rgpd-manage .details .btn-detail.active + .panel{
+#rgpd-manage .details .btn-detail.active + .panel{
 				height: auto;
 				visibility: visible;
 				opacity: 1;
 			}
 
-.rgpd-manage .details .panel{
+#rgpd-manage .details .panel{
 			transition: opacity .4s ease, visibility .4s ease;
 			height: 0;
 			opacity: 0;
@@ -177,12 +178,12 @@
 			background: rgba(255,255,255,.1);
 		}
 
-.rgpd-manage .details .panel p{	
+#rgpd-manage .details .panel p{	
 				padding: 10px 0;
 				margin: 0;
 			}
 
-.rgpd-manage input[type=checkbox]{
+#rgpd-manage input[type=checkbox]{
 		cursor: pointer;
 		-webkit-appearance: none;
 		   -moz-appearance: none;
@@ -196,7 +197,7 @@
 		position: relative;
 	}
 
-.rgpd-manage input[type=checkbox]:before{
+#rgpd-manage input[type=checkbox]:before{
 			content: "";
 			width: 30px;
 			height: 30px;
@@ -206,29 +207,29 @@
 			transition: all .3s ease;
 		}
 
-.rgpd-manage input[type=checkbox]:after{
-			content: attr(data-denied);
+#rgpd-manage input[type=checkbox]:after{
+			content: "";
 			position: absolute;
 			left: calc(100% + 10px);
 		}
 
-.rgpd-manage input[type=checkbox]:checked:before{
+#rgpd-manage input[type=checkbox]:checked:before{
 				transform: translateX(30px);
-				background: var(--color-primary);
+				background: var(--color-1);
 			}
 
-.rgpd-manage input[type=checkbox]:checked:after{
-				content: attr(data-accept);
+#rgpd-manage input[type=checkbox]:checked:after{
+				content: "✓";
 			}
 
-.rgpd-manage .btn-close{
+#rgpd-manage .btn-close{
 		position: sticky;
 		z-index: 20;
 		top: 0px;
 		left: 100%;
 	}
 
-.rgpd-manage footer{
+#rgpd-manage footer{
 		margin: var(--margin) 0;
 		display: flex;
 		justify-content: flex-end;
@@ -236,12 +237,12 @@
 
 @media (min-width: 768px){
 
-.rgpd-manage{
+#rgpd-manage{
 		background: rgba(255,255,255,0.6);
 		padding: var(--margin)
 }
 		
-		.rgpd-manage .box{
+		#rgpd-manage .box{
 			box-shadow: 0 0 30px rgba(0,0,0,0.3);
 			margin: auto;
 		}

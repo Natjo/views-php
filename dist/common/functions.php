@@ -2,14 +2,7 @@
 
 define("THEME_URL", "/");
 
-function header_($args = null)
-{
-    include("common/header.php");
-}
-function footer_($args = null)
-{
-    include("common/footer.php");
-}
+
 /**
  * Utils
  */
@@ -37,13 +30,33 @@ function views($name, $args = null, $defer = false)
 {
     global $json;
     global $views;
-    include("./assets/views/$name/index.php");
-    if (!in_array($name, $views)) {
+    
+    //if (!in_array($name, $views[$name])) {
+    if (!array_key_exists($name, $views)) {
         $views[$name] = array(
             "js" => $json[$name]["js"],
             "css" => $json[$name]["css"],
             "defer" => $defer
         );
+       /* if ($json[$name]["css"]) {
+            echo '<link rel="stylesheet" href="' . $json[$name]["css"] . '">' . "\n";
+            //echo '<link rel="preload" href="' . $json[$name]["css"] . '" as="style">' . "\n";
+        }*/
+       if ($json[$name]["css"]) {
+            $file = $json[$name]["css"];
+            echo "<style>".file_get_contents($file)."</style>";
+        }
+
+    }
+    include("./assets/views/$name/index.php");
+}
+function views_preload_css()
+{
+    global $views;
+    foreach ($views as $view) {
+        if ($view["css"]) {
+            echo '<link rel="preload" href="' . $view["css"] . '" as="style">' . "\n";
+        }
     }
 }
 
@@ -77,5 +90,3 @@ function views_defer()
     }
     return json_encode($arr);
 }
-
-ob_start();

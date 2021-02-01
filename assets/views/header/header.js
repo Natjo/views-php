@@ -1,5 +1,5 @@
-const header = document.querySelector('.header-main');
-const nav = document.querySelector('.nav-main');
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
 const btn_nav = header.querySelector('.btn-nav');
 var scrollDown = false;
 var scrollY = 0;

@@ -1,6 +1,6 @@
 [data-view=hero-article] {
-    margin-top: var(--margin-xlarge);
-    margin-bottom: var(--margin-small);
+    margin-top: var(--margin-xlg);
+    margin-bottom: var(--margin-sm);
     justify-items: center;
 
     time,h1,.tag,.btn-back  {
@@ -14,14 +14,14 @@
         display: block;
         margin-bottom: 20px;
         font-weight: 800;
-        color: $color-primary;
+        color: var(--color-1);
     }
     h1 {
         margin-bottom: 30px;
     }
     .tag {
         color: #fff;
-        background: var(--color-third);
+        background: var(--color-3);
         padding: 10px 15px;
         font-weight: 600;
         text-transform: uppercase;

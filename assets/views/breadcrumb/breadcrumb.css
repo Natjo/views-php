@@ -20,7 +20,7 @@
 			}
 		}
 	}
-   @media (--breakpoint-medium-down) {
+   @media (--breakpoint-md-down) {
 		display: none;
 	}
 }

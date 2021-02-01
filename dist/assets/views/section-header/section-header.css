@@ -8,6 +8,6 @@
     }
 
     .section-header .intro {
-        margin-top: var(--margin-small);
+        margin-top: var(--margin-sm);
         margin-bottom: var(--margin);
     }

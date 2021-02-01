@@ -1,41 +1,41 @@
 @import url(/assets/modules/form/form.css);
 
+.card-share {
+    background: var(--color-3) url(/assets/img/card-share/bg.svg) no-repeat 0;
+    background-size: 100% 100%;
+    color: #fff;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+}
+
+.card-share .name {
+        font-size: 2.8rem;
+        font-family: var(--font-secondary);
+        margin-bottom: 20px;
+    }
+
+.card-share .text {
+        margin-bottom: 20px;
+    }
+
+.card-share .picto-linkedin:before {
+            content: "\e905";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-family: var(--font-icon);
+            font-size: 4rem;
+        }
 [data-view=block-contact] .sub-header {
-        margin-bottom: var(--margin-large);
+        margin-bottom: var(--margin-lg);
     }
-
 [data-view=block-contact] .card-share {
-        background: var(--color-third) url(/assets/img/card-share/bg.svg) no-repeat 0;
-        background-size: 100% 100%;
-        color: #fff;
-        height: 350px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 80px;
-        position: relative;
-        margin-top: var(--margin-large);
+        margin-top: var(--margin-lg);
     }
-
-[data-view=block-contact] .card-share .name {
-            font-size: 2.8rem;
-            font-family: var(--font-secondary);
-            margin-bottom: 20px;
-        }
-
-[data-view=block-contact] .card-share .text {
-            margin-bottom: 20px;
-        }
-
-[data-view=block-contact] .card-share .picto-linkedin:before {
-                content: "\e905";
-                position: absolute;
-                top: 20px;
-                right: 30px;
-                font-family: var(--font-icon);
-                font-size: 4rem;
-            }
-
 @media (max-width: 768px) {
         [data-view=block-contact] .first {
             grid-column: 1 / -1;
@@ -43,11 +43,7 @@
         [data-view=block-contact] .second {
             grid-column: 1 / -1;
         }
-        [data-view=block-contact] .card-share {
-            margin-bottom: 40px;
-        }
     }
-
 @media (min-width: 768px) {
         [data-view=block-contact] .first {
             grid-column: 2 / 7;

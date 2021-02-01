@@ -6,7 +6,7 @@
         grid-column: 3 / -3;
     }
     .intro {
-        margin-top: var(--margin-small);
+        margin-top: var(--margin-sm);
         margin-bottom: var(--margin);
     }
 }

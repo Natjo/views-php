@@ -1,4 +1,4 @@
-<footer id="footer-main" role="contentinfo">
+<footer id="footer" role="contentinfo">
     <div class="footer-top">
         <a href="/" class="logo"><img src="<?= THEME_URL ?>assets/img/logo-small.svg" width="85" height="85" alt="Atream" loading="lazy"></a>
         <address>
@@ -33,7 +33,7 @@
             </ul>
             <ul class="list-share">
                 <li>
-                    <a href="<?= $args["linkedin"]; ?>" class="linkedin"></a>
+                    <a href="<?= $args["linkedin"]; ?>" class="linkedin" aria-label="linkedin"></a>
                 </li>
             </ul>
         </div>

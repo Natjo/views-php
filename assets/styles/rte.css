@@ -12,13 +12,13 @@
         display: block;
         font-weight: 400;
         font-size: 2rem;
-        color: var(--color-third);
+        color: var(--color-3);
         line-height: 1.25;
-        margin-bottom: var(--margin-xsmall);
+        margin-bottom: var(--margin-xsm);
     }
     .signature {
         display: block;
-        color: var(--color-third);
+        color: var(--color-3);
         font-weight: 800;
         font-style: italic;
         text-align: center;
@@ -26,20 +26,20 @@
     }
     h2 {
         font-family: var(--font-secondary);
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-lg);
         font-weight: 600;
         line-height: 1.2;
         margin-top: 40px;
-        margin-bottom: var(--margin-xsmall);
+        margin-bottom: var(--margin-xsm);
     }
     h3 {
         font-size: 1.6rem;
-        color: var(--color-third);
+        color: var(--color-3);
         font-size: var(--font-size);
-        margin-bottom: var(--margin-xsmall);
+        margin-bottom: var(--margin-xsm);
     }
     p {
-        margin-bottom: var(--margin-small);
+        margin-bottom: var(--margin-sm);
     }
     img {
         max-width: 100%;
@@ -50,20 +50,20 @@
         font-weight: 800;
     }
     a {
-        color: var(--color-primary);
+        color: var(--color-1);
         &:hover {
             text-decoration: underline;
         }
     }
     ul,
     ol {
-        margin-bottom: var(--margin-small);
+        margin-bottom: var(--margin-sm);
         li {
             padding-left: 30px;
             position: relative;
 
             &:not(:last-child) {
-                margin-bottom: var(--margin-xsmall);
+                margin-bottom: var(--margin-xsm);
             }
             &:before {
                 content: "\e901";
@@ -72,15 +72,15 @@
                 top: 2px;
                 left: 0;
                 font-family: var(--font-icon);
-                color: var(--color-primary);
+                color: var(--color-1);
                 font-size: 1.1rem;
             }
         }
     }
     blockquote {
         font-family: var(--font-secondary);
-        font-size: var(--font-size-large);
-        color: var(--color-primary);
+        font-size: var(--lg);
+        color: var(--color-1);
         text-align: center;
         line-height: 1.2;
         font-weight: 800;
@@ -94,12 +94,12 @@
         margin-bottom: 0;
     }
 
-    @media (--breakpoint-medium-down) {
+    @media (--breakpoint-md-down) {
         .signature {
             font-size: 1.8rem;
         }
     }
-    @media (--breakpoint-medium-up) {
+    @media (--breakpoint-md-up) {
         .signature {
             font-size: 2.4rem;
         }

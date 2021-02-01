@@ -24,7 +24,7 @@
         <div class="sub-header">
             Vous pouvez aussi nous consulter à distance en nous envoyant un message. Nous prendrons contact avec vous dans les plus brefs délais.
         </div>
-        <form action="contact" novalidate class="ajax" data-url="" data-nonce="1c6a4fbee7">
+        <form action="contact" novalidate class="form ajax" data-url="" data-nonce="1c6a4fbee7">
             <div class="post-error">
             </div>
             <fieldset>

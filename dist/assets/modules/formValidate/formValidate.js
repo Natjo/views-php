@@ -1,40 +1,28 @@
-const formValidate = (form, onSend) => {
-  const fields = form.querySelectorAll(':required');
-  let init = true;
-  let validity = true;
+const formValidate = (a, b) => {
+  const c = a.querySelectorAll(':required');
+  let d = !0,
+      e = !0;
 
-  for (let field of fields) {
-    const msg = document.createElement('div');
-    msg.className = 'field-error-msg';
-    msg.id = field.getAttribute('aria-describedby');
-    field.parentNode.appendChild(msg);
-    field.addEventListener('change', () => validate());
+  for (let d of c) {
+    const a = document.createElement('div');
+    a.className = 'field-error-msg', a.id = d.getAttribute('aria-describedby'), d.parentNode.appendChild(a), d.addEventListener('change', () => f());
   }
 
-  const validate = () => {
-    if (init) return;
-    validity = true;
+  const f = () => {
+    if (!d) {
+      e = !0;
 
-    for (let field of fields) {
-      const msg = field.parentNode.querySelector('.field-error-msg');
-
-      if (!field.checkValidity()) {
-        field.classList.add('error');
-        msg.innerHTML = field.validationMessage;
-        validity = false;
-      } else {
-        field.classList.remove('error');
-        msg.innerHTML = "";
+      for (let a of c) {
+        const b = a.parentNode.querySelector('.field-error-msg');
+        a.checkValidity() ? (a.classList.remove('error'), b.innerHTML = "") : (a.classList.add('error'), b.innerHTML = a.validationMessage, e = !1);
       }
-    }
 
-    return validity;
+      return e;
+    }
   };
 
-  form.onsubmit = e => {
-    e.preventDefault();
-    init = false;
-    validate() ? onSend() : null;
+  a.onsubmit = a => {
+    a.preventDefault(), d = !1, f() ? b() : null;
   };
 };
 

@@ -1,10 +1,10 @@
 #team {
-    padding-top: var(--margin-large);
-    padding-bottom: var(--margin-large);
+    padding-top: var(--margin-lg);
+    padding-bottom: var(--margin-lg);
 }
 
     #team header {
-        margin-bottom: var(--margin-large);
+        margin-bottom: var(--margin-lg);
     }
 
     #team .sidebar {
@@ -12,7 +12,7 @@
     }
 
     #team .filters-title{
-        border-top: 2px solid var(--color-third);
+        border-top: 2px solid var(--color-3);
         height: 90px;
         display:flex;
         align-items: center;
@@ -22,19 +22,19 @@
 
     #team .filters button{
             height: 36px;
-            background: var(--color-primary);
+            background: var(--color-1);
             color: #fff;
             padding: 0 10px;
             transition: background .3s ease;
         }
 
     #team .filters button.active{
-                background: var(--color-third);
+                background: var(--color-3);
             }
 
     @media(hover: hover) and (pointer: fine) {
                 #team .filters button:hover{
-                    background: var(--color-third);
+                    background: var(--color-3);
                 }
             }
 

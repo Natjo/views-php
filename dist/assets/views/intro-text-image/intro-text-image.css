@@ -1,10 +1,10 @@
-[data-view=intro-text-image]{
-    padding-top: var(--margin-xlarge);
-    padding-bottom: var(--margin-xlarge);
+.intro-text-image{
+    padding-top: var(--margin-xlg);
+    padding-bottom: var(--margin-xlg);
 }
    
-    [data-view=intro-text-image] .list-text-image {
-        grid-column: container;
+    .intro-text-image .list-text-image {
+        grid-column: 1 / -1;
         display: grid;
         grid-gap: var(--gap);
     }

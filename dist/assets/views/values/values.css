@@ -1,5 +1,5 @@
 [data-view=values] {
-    margin: var(--margin-large) 0;
+    margin: var(--margin-lg) 0;
     position: relative;
     color: #fff;
 }
@@ -61,8 +61,8 @@
         [data-view=values] picture{
             grid-column: 1 / -1;
             grid-row: 2;
-            margin-left: calc(-1 * var(--container-margin));
-            margin-right: calc(-1 * var(--container-margin))
+            margin-left: calc(-1 * var(--ctr-margin));
+            margin-right: calc(-1 * var(--ctr-margin))
         }
     }
 

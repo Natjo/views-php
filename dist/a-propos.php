@@ -52,18 +52,18 @@ views('background', array(
         ?>
 
         <?php
-        views('intro-other-page', array(
+        views('push-page', array(
             "title" => "Nos convictions d’investissement",
             "text" => "Depuis notre création, nous accompagnons le secteur du tourisme pour révéler son potentiel et participer activement au rayonnement de ce secteur hautement stratégique de l’économie française. Cette industrie représente la majeure partie de notre activité. Nous avons également fait le choix de diversifier notre offre en investissant dans le secteur tertiaire, résidentiel et viticole. Trois secteurs en pleine croissance qui permettent de générer des revenus performants et stables sur le long terme tout en impactant positivement le présent et le futur.",
             "contrast" => "dark",
             "cta-label" => "Découvrir nos solutions",
             "page" => "",
             "color" => "#e8ae3a",
-            "image-mobile" => "assets/img/intro-other-page/787x990.png",
+            "image-mobile" => "assets/img/push-page/787x990.png",
             "image-desktop" => "assets/img/uploads/124552396_810871553034005_9133337070938418485_n.png",
-            "image-mobile-webp" => "assets/img/intro-other-page/787x990.png",
+            "image-mobile-webp" => "assets/img/push-page/787x990.png",
             "image-desktop-webp" => "assets/img/uploads/124552396_810871553034005_9133337070938418485_n.webp"
-        ), true);
+        ));
         ?>
 
         <?php

@@ -1,14 +1,14 @@
-[data-view=hero-home]{
+#hero-home{
     overflow: hidden;
     position: relative;
     background: #548fb9;
 }
     
-    [data-view=hero-home] h1{
+    #hero-home h1{
         margin-bottom: var(--margin);
     }
     
-    [data-view=hero-home] .content{ 
+    #hero-home .content{ 
         position: relative;
         z-index: 2; 
         height: 100vh;
@@ -16,40 +16,43 @@
         color: #fff;
     }
     
-    [data-view=hero-home] .content h1, [data-view=hero-home] .content a{
+    #hero-home .content h1, #hero-home .content a{
             grid-column: 1 / -5;
         }
     
-    [data-view=hero-home] svg{
+    #hero-home svg{
         position: absolute;
         z-index: 1;
         width: 960px;
         height: 960px;
     }
     
-    [data-view=hero-home] svg path{
+    #hero-home svg path{
             stroke-width: 2;
             fill: none;
-            stroke: var(--color-primary);
+            stroke: var(--color-1);
         }
     
-    [data-view=hero-home] .corner-left{
+    #hero-home .corner-left{
         top: 0;
         left: 0;
     }
     
-    [data-view=hero-home] .corner-right{
+    #hero-home .corner-right{
         bottom: 0;
         right: 0;
     }
     
-    [data-view=hero-home] picture{
+    #hero-home picture{
         position: absolute;
         z-index: 0;
-        inset: 0 0 0 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     
-    [data-view=hero-home] picture img{
+    #hero-home picture img{
             width: 100%;
             height: 100%;
             -o-object-fit: cover;

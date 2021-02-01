@@ -3,7 +3,6 @@ body {
     margin: auto;
     font-family: serif;
     font-size: 12pt;
-    background-color: red;
     color: #000;
 }
 p,
@@ -33,13 +32,13 @@ a[href]:after {
     content: " (" attr(href) ")"; /* affichage des URL des liens */
 }
 
-header[role="banner"] {
+#header{
     position: relative;
 }
 .btn-nav {
     display: none;
 }
-footer[role="contentinfo"] {
+#footer{
     display: none;
 }
 article {

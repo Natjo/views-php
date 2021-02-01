@@ -1,4 +1,4 @@
-const filter = value => {
+const filter = () => {
   console.log("filter");
 };
 

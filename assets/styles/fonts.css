@@ -1,13 +1,13 @@
 /* Albra */
 @font-face {
     font-family: 'Albra', Arial;
-    src: url(../fonts/Albra-Semi.woff2) format('woff2'), url(../fonts/Albra-Semi.woff) format('woff');
+    src: url(/assets/fonts/Albra-Semi.woff2) format('woff2');
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'Albra', Arial;
-    src: url(../fonts/Albra-Bold.woff2) format('woff2'), url(../fonts/Albra-Bold.woff) format('woff');
+    src: url(/assets/fonts/Albra-Bold.woff2) format('woff2');
     font-weight: 800;
     font-style: normal;
 }
@@ -15,43 +15,45 @@
 /* Brown */
 @font-face {
     font-family: 'Brown', Arial;
-    src: url(../fonts/BrownLLWeb-Light.woff2) format('woff2'), url(../fonts/BrownLLWeb-Light.woff) format('woff');
+    src: url(/assets/fonts/BrownLLWeb-Light.woff2) format('woff2');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Brown', Arial;
-    src: url(../fonts/BrownLLWeb-Regular.woff2) format('woff2'), url(../fonts/BrownLLWeb-Regular.woff) format('woff');
+    src: url(/assets/fonts/BrownLLWeb-Regular.woff2) format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Brown', Arial;
-    src: url(../fonts/BrownLLWeb-Italic.woff2) format('woff2'), url(../fonts/BrownLLWeb-Italic.woff) format('woff');
+    src: url(/assets/fonts/BrownLLWeb-Italic.woff2) format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
     font-family: 'Brown', Arial;
-    src: url(../fonts/BrownLLWeb-Bold.woff2) format('woff2'), url(../fonts/BrownLLWeb-Bold.woff) format('woff');
+    src: url(/assets/fonts/BrownLLWeb-Bold.woff2) format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Brown', Arial;
-    src: url(../fonts/BrownLLWeb-BoldItalic.woff2) format('woff2'), url(../fonts/BrownLLWeb-BoldItalic.woff) format('woff');
+    src: url(/assets/fonts/BrownLLWeb-BoldItalic.woff2) format('woff2');
     font-weight: 800;
     font-style: italic;
+    font-display: swap;
 
 }
 
 /* icomoon */
 @font-face {
     font-family: 'icomoon';
-    src: url(../fonts/icomoon.woff2) format('woff2'), url(../fonts/icomoon.woff) format('woff');
+    src: url(/assets/fonts/icomoon.woff2) format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }

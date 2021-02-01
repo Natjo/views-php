@@ -1,16 +1,19 @@
-@import url(reset.css);
-@import url(variables.css);
-@import url(fonts.css);
+@import url(assets/styles/fonts.css);
+@import url(assets/styles/reset.css);
+@import url(assets/styles/variables.css);
 
 html {
-    scroll-behavior: smooth;
+    font-size: 62.5%;
 }
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
     font-family: var(--font-primary);
-    font-weight: 300;
-    line-height: 1.4;
     font-size: var(--font-size);
     color: var(--color-text);
+    font-weight: 300;
+    line-height: 1.4;
 }
 body.hasPopin {
         height: 100vh;
@@ -36,7 +39,7 @@ address > div:before {
             position: absolute;
             top: 2px;
             left: 0;
-            color: var(--color-primary);
+            color: var(--color-1);
             font-size: 1.2rem;
         }
 
@@ -51,19 +54,19 @@ address > div.address:before {
 address > div.tel:before {
                 content: "\e904";
             }
-
+section section{
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 5000px;
+}
 main > section {
     padding-bottom: 40px;
 }
-
 @media (max-width: 992px) {
         main > section > section[data-strate="solution-3-column"]:last-of-type {
             margin-bottom: -40px;
         }
     }
-
 @media (min-width: 992px) {
-
 main > section {
         padding-bottom: 80px
 }
@@ -73,21 +76,21 @@ main > section {
         }
     }
 main > article {
-    padding-top: var(--margin-xlarge);
+    padding-top: var(--margin-xlg);
     margin-bottom: var(--margin);
 }
 
 /* layout */
 .container{
-    box-sizing: content-box;
-    max-width: var(--container-width);
-	margin: 0 auto;
-	padding-left: var(--container-margin);
-    padding-right: var(--container-margin);
+    max-width: var(--ctr-width);
+    margin-right: auto;
+    margin-left: auto;
+	padding-left: var(--ctr-margin);
+    padding-right: var(--ctr-margin);
 }
 .container-fluid{
-	padding-left: var(--container-margin);
-    padding-right: var(--container-margin);
+	padding-left: var(--ctr-margin);
+    padding-right: var(--ctr-margin);
 }
 .grid{
     display: grid;
@@ -105,13 +108,13 @@ main > article {
 .tl0 {
     font-weight: 600;
     line-height: 1.15;
-    font-size: var(--font-size-xxlarge);
+    font-size: var(--font-size-xxlg);
     font-family: var(--font-secondary);
 }
 .tl1 {
     font-weight: 600;
     line-height: 1.2;
-    font-size: var(--font-size-xxlarge);
+    font-size: var(--font-size-xxlg);
     font-family: var(--font-secondary);
 }
 .tl1.light {
@@ -119,20 +122,20 @@ main > article {
     }
 .tl2 {
     font-weight: 800;
-    font-size: var(--font-size-xlarge);
+    font-size: var(--font-size-xlg);
     font-family: var(--font-secondary);
     line-height: 1.1;
 }
 .tl3 {
     font-weight: 800;
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-lg);
     font-family: var(--font-secondary);
     line-height: 1.15;
 }
 
 /* btns */
 .btn-primary {
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-1);
     border-radius: 28px;
     font-weight: 800;
     transition: all 0.25s ease;
@@ -144,14 +147,14 @@ main > article {
         content: "\e929";
         display: inline-block;
         font-family: var(--font-icon);
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 400;
         vertical-align: middle;
         transform: translate(0, -1px);
     }
 .btn-primary:hover {
-        background: var(--color-third);
-        border-color: var(--color-third);
+        background: var(--color-3);
+        border-color: var(--color-3);
         color: #fff;
     }
 .btn-primary.light {
@@ -165,10 +168,10 @@ main > article {
         }
 .btn-primary.dark {
         background: transparent;
-        border-color: var(--color-third);
+        border-color: var(--color-3);
     }
 .btn-primary.dark:after {
-            color: var(--color-third);
+            color: var(--color-3);
             transition: color 0.25s ease;
         }
 .btn-primary.dark:hover {
@@ -177,7 +180,7 @@ main > article {
             border-color: #fff;
         }
 .btn-primary.dark:hover:after {
-                color: var(--color-primary);
+                color: var(--color-1);
             }
 .btn-primary.download:after {
             content: "\e90a";
@@ -216,19 +219,19 @@ main > article {
 }
 .btn-secondary:after {
         content: "\e929";
-        border: 3px solid var(--color-primary);
+        border: 3px solid var(--color-1);
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         font-family: var(--font-icon);
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 400;
         vertical-align: middle;
         transition: all 0.25s ease;
     }
 .btn-secondary:hover {
-        color: var(--color-primary);
+        color: var(--color-1);
     }
 .btn-secondary:hover:after {
             transform: scale(1.1);
@@ -237,14 +240,14 @@ main > article {
         color: #fff;
     }
 .btn-secondary.light:hover {
-            color: var(--color-primary);
+            color: var(--color-1);
         }
 .btn-secondary.dark:after {
-            border-color: var(--color-third);
-            color: var(--color-third);
+            border-color: var(--color-3);
+            color: var(--color-3);
         }
 .btn-secondary.dark:hover {
-            color: var(--color-third);
+            color: var(--color-3);
         }
 @media (max-width: 768px) {
         .btn-secondary:after {
@@ -262,7 +265,7 @@ main > article {
         }
     }
 .btn-picto {
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-1);
     height: 43px;
     width: 43px;
     border-radius: 50%;
@@ -273,7 +276,7 @@ main > article {
 .btn-picto:before {
         content: "";
         font-family: var(--font-icon);
-        color: var(--color-primary);
+        color: var(--color-1);
         font-size: 2.5rem;
     }
 .btn-picto.close:before {
@@ -289,13 +292,13 @@ main > article {
     transition: all 0.25s ease;
 }
 .link-primary:hover {
-        color: var(--color-primary);
+        color: var(--color-1);
     }
 .link-primary:not(.reverse):after {
             content: "\e90b";
             display: inline-block;
             font-family: var(--font-icon);
-            color: var(--color-primary);
+            color: var(--color-1);
             font-weight: 400;
             vertical-align: middle;
             font-size: 1.3rem;
@@ -306,7 +309,7 @@ main > article {
             content: "\e90b";
             display: inline-block;
             font-family: var(--font-icon);
-            color: var(--color-primary);
+            color: var(--color-1);
             font-weight: 400;
             vertical-align: middle;
             font-size: 1.3rem;
@@ -317,14 +320,14 @@ main > article {
         color: #fff;
     }
 .link-primary.light:hover {
-            color: var(--color-primary);
+            color: var(--color-1);
         }
 .link-primary.dark:after,
         .link-primary.dark:before {
-            color: var(--color-third);
+            color: var(--color-3);
         }
 .link-primary.dark:hover {
-            color: var(--color-third);
+            color: var(--color-3);
         }
 @media (min-width: 576px) {
 .link-primary {
@@ -337,13 +340,13 @@ main > article {
     white-space: nowrap;
 }
 .link-secondary:hover {
-        color: var(--color-primary);
+        color: var(--color-1);
     }
 .link-secondary:before {
         content: "\e90c";
         display: inline-block;
         font-family: var(--font-icon);
-        color: var(--color-primary);
+        color: var(--color-1);
         font-weight: 400;
         vertical-align: middle;
         font-size: 1.3rem;
@@ -354,13 +357,13 @@ main > article {
         color: #fff;
     }
 .link-secondary.light:hover {
-            color: var(--color-primary);
+            color: var(--color-1);
         }
 .link-secondary.dark:before {
-            color: var(--color-third);
+            color: var(--color-3);
         }
 .link-secondary.dark:hover {
-            color: var(--color-third);
+            color: var(--color-3);
         }
 @media (min-width: 576px) {
 .link-secondary {
@@ -392,7 +395,7 @@ main > article {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary);
+    color: var(--color-1);
 }
 .picto:before {
         font-family: var(--font-icon);
@@ -414,11 +417,11 @@ main > article {
             content: "\e90a";
         }
 .picto.dark {
-        border: 2px solid $color-third;
-        color: $color-third;
+        border: 2px solid var(--color-3);
+        color: var(--color-3);
     }
 .picto.light {
-        background: var(--color-primary);
+        background: var(--color-1);
         color: #fff;
     }
 

@@ -1,5 +1,5 @@
 [data-view=video] {
-    padding-bottom: var(--margin-xlarge);
+    padding-bottom: var(--margin-xlg);
 
     .videoPopin {
         grid-column: 2 / -2;;

@@ -1,4 +1,4 @@
-<section data-view="solutions-3-lines">
+<section class="solutions-3-lines" data-view="solutions-3-lines">
 
     <?php views('section-header', array(
         "title" => $args["title"],

@@ -1,13 +1,13 @@
-<?php include("common/functions.php"); ?>
-
 <?php
-header_(array("isLight" => true));
+global $isLight;
+$isLight = true;
+include("common/header.php"); 
 ?>
-<?php include("styleguide/grid-viewer.php"); ?>
+
+<?php  include("styleguide/grid-viewer.php"); ?>
 <main role="main">
 
     <section>
-
         <?php
         views('hero-home', array(
             "title" => "Investissement immobilier et Private Equity, une vision engagée pour investir positivement l’avenir",
@@ -48,17 +48,17 @@ header_(array("isLight" => true));
         ?>
 
         <?php
-        views('intro-other-page', array(
+        views('push-page', array(
             "title" => "Ouvrir de nouvelles perspectives d’investissement",
             "text" => "Investisseur ou opérateur, institutionnel ou particulier, nous combinons les meilleurs expertises pour vous proposer les solutions d’investissement touristiques efficientes, novatrices et résilientes.",
             "contrast" => "",
             "cta-label" => "Mieux nous connaitre",
-            "page" => "",
+            "page" => "/",
             "color" => "#061927",
-            "image-mobile" => "assets/img/intro-other-page/787x990.png",
-            "image-desktop" => "assets/img/intro-other-page/721x900.png",
-            "image-mobile-webp" => "assets/img/intro-other-page/787x990.png",
-            "image-desktop-webp" => "assets/img/intro-other-page/721x900.webp"
+            "image-mobile" => "assets/img/push-page/787x990.png",
+            "image-desktop" => "assets/img/push-page/721x900.png",
+            "image-mobile-webp" => "assets/img/push-page/787x990.webp",
+            "image-desktop-webp" => "assets/img/push-page/721x900.webp"
         ), true);
         ?>
 
@@ -109,4 +109,4 @@ header_(array("isLight" => true));
     </section>
 </main>
 
-<?php footer_(); ?>
+<?php include("common/footer.php"); ?>

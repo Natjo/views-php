@@ -1,10 +1,10 @@
 #gouvernance {
-    padding-top: var(--margin-large);
-    padding-bottom: var(--margin-large);
+    padding-top: var(--margin-lg);
+    padding-bottom: var(--margin-lg);
 }
 
     #gouvernance header {
-        margin-bottom: var(--margin-large);
+        margin-bottom: var(--margin-lg);
         grid-column: container;
     }
 
