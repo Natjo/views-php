@@ -8,16 +8,6 @@
   },
   "author": "Martin Jonathan",
   "license": "ISC",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "entry",
-        "corejs": "3.6.5",
-        "modules": false
-      }
-    ]
-  },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
     "@babel/core": "^7.6.4",
