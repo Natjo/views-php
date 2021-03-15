@@ -108,7 +108,7 @@
         margin-bottom: 0;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         .rte .signature {
             font-size: 1.8rem;
         }

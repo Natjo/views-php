@@ -33,7 +33,7 @@
         right: 10px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
         .card-solution a {
             padding: 20px;
             height: 250px;

@@ -50,6 +50,7 @@ function views($name, $args = null, $defer = false)
     }
     include("./assets/views/$name/index.php");
 }
+/*
 function views_preload_css()
 {
     global $views;
@@ -58,8 +59,8 @@ function views_preload_css()
             echo '<link rel="preload" href="' . $view["css"] . '" as="style">' . "\n";
         }
     }
-}
-
+}*/
+/*
 function views_css()
 {
     global $views;
@@ -69,7 +70,7 @@ function views_css()
         }
     }
 }
-
+*/
 function views_js()
 {
     global $views;

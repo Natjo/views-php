@@ -1,6 +1,6 @@
-@import url(assets/styles/fonts.css);
+/*@import url(assets/styles/fonts.css);
 @import url(assets/styles/reset.css);
-@import url(assets/styles/variables.css);
+@import url(assets/styles/variables.css);*/
 
 html {
     font-size: 62.5%;
@@ -61,7 +61,7 @@ section section{
 main > section {
     padding-bottom: 40px;
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
         main > section > section[data-strate="solution-3-column"]:last-of-type {
             margin-bottom: -40px;
         }
@@ -188,7 +188,7 @@ main > article {
 .btn-primary.email:after {
             content: "\e92d";
         }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 .btn-primary {
         min-height: 40px;
         padding-left: 18px;
@@ -249,7 +249,7 @@ main > article {
 .btn-secondary.dark:hover {
             color: var(--color-3);
         }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
         .btn-secondary:after {
             height: 47px;
             width: 47px;

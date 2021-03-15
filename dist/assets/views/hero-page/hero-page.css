@@ -11,7 +11,7 @@
         font-weight: 400;
     }
 
-    @media (max-width: 768px) {[data-view=hero-page] {
+    @media (max-width: 767px) {[data-view=hero-page] {
         padding-top: 140px;
         padding-bottom: 20px
 }

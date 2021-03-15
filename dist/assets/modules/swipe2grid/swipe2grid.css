@@ -2,7 +2,7 @@
     padding: 0 var(--ctr-margin);
 }
     
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         .swipe2grid.swiper-container{
             margin: 0 var(--ctr-margin);
             height: 100%;

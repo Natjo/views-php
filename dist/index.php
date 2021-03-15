@@ -4,7 +4,6 @@ $isLight = true;
 include("common/header.php"); 
 ?>
 
-<?php  include("styleguide/grid-viewer.php"); ?>
 <main role="main">
 
     <section>

@@ -36,7 +36,7 @@
 [data-view=block-contact] .card-share {
         margin-top: var(--margin-lg);
     }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
         [data-view=block-contact] .first {
             grid-column: 1 / -1;
         }

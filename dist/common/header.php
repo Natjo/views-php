@@ -19,19 +19,17 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="preload" href="assets/fonts/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
+    <!--<link rel="preload" href="assets/fonts/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">-->
     <!-- <link href="assets/styles/styles.css" rel="stylesheet" media="screen">  -->
-
-    <?php 
+    <?php
     $inline = "";
-    /*$inline .= file_get_contents('assets/styles/reset.css');
+    $inline .= file_get_contents('assets/styles/reset.css');
     $inline .= file_get_contents('assets/styles/variables.css');
-    $inline .= file_get_contents('assets/styles/fonts.css'); */
+    $inline .= file_get_contents('assets/styles/fonts.css');
     $inline .= file_get_contents('assets/styles/styles.css');
-    echo "<style>".$inline."</style>";
+    echo "<style>".$inline."</style>"; 
     ?>
-
+    <?php //echo "<style>".file_get_contents('assets/styles/styles.css')."</style>"; ?>
 </head>
 
 <body>

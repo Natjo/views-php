@@ -41,6 +41,7 @@ views('footer', array(
 ));
 ?>
 
+
 <?php include("common/rgpd.php"); ?>
 
 <script>
@@ -51,21 +52,27 @@ views('footer', array(
         script.setAttribute('defer', '');
         document.body.appendChild(script);
     }
+    const add_style = (href, media) => {
+        const style= document.createElement('link');
+        style.rel = 'stylesheet';
+        style.media = media;
+        style.href = href;
+        document.body.appendChild(style);
+    }
     const files = <?= views_js(); ?>; 
     window.addEventListener('DOMContentLoaded', () => {
         for (const view of files) add_script(`assets/views/${view}/${view}.js`);
         add_script(`assets/app.js`);
-        const style = document.createElement('link');
-        style.rel = 'stylesheet';
-        style.media = 'print';
-        style.href = 'assets/styles/print.css';
-        
-        document.body.appendChild(style);
     });
+    window.addEventListener('load', () => {
+        add_style('assets/styles/print.css', 'print');
+        add_style('assets/modules/rgpd/rgpd.css', 'screen');
+    });
+
     const defers = <?= views_defer() ?>;
     const observer = new IntersectionObserver(items => items.forEach(e => {
-        const view = e.target.dataset.view;
         if(e.isIntersecting){
+            const view = e.target.dataset.view;
             add_script(`assets/views/${view}/${view}.js`);
             observer.unobserve(e.target)
         } 

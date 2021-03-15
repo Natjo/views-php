@@ -23,7 +23,7 @@
                object-fit: cover;
         }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         .push-page .content{
             grid-column: 1 / -1;
             padding: 80px 0;

@@ -177,7 +177,7 @@
         font-size: var(--font-size-small);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
         .form .field{
             flex-direction: column;
             margin-bottom: 20px;

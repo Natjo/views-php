@@ -2,7 +2,7 @@
 
     <div class="box">
 
-        <button type="button" class="btn-close"></button>
+        <button type="button" class="btn-close" title="Close"></button>
 
         <header>
             <h1>Gestion des cookies</h1>

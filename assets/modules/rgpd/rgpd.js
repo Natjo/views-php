@@ -25,11 +25,11 @@ const Rgpd = onexec => {
     };
     xhr.open("GET", '/common/rgpd.php');
     xhr.send();*/
-    const style = document.createElement('link');
+   /* const style = document.createElement('link');
     style.rel = 'stylesheet';
     style.href = import.meta.url.replace('.js', '.css');
     document.body.appendChild(style);
-    style.onload = () => {
+    style.onload = () => {*/
         const cookie = {
             create(name, value, days) {
                 var date = new Date();
@@ -182,7 +182,7 @@ const Rgpd = onexec => {
         };
 
         btn_close.onclick = e => close(e);
-    };
+   /* };*/
 };
 
 export default Rgpd;

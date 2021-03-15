@@ -13,4 +13,5 @@ if ('loading' in HTMLImageElement.prototype) {
 } else {
     document.querySelectorAll('img[loading]').forEach((img) => img.removeAttribute('loading'));
 }
+
 console.log("app.js");

@@ -20,7 +20,7 @@
 				padding-right: 4px;
 			}
 	
-	@media (max-width: 768px) {.breadcrumb{
+	@media (max-width: 767px) {.breadcrumb{
 		display: none
 }
 	}

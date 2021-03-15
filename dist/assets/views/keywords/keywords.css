@@ -30,7 +30,7 @@
             opacity: 1;
         }
     
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         [data-view=keywords] button {
             font-size: 3.4rem;
         }

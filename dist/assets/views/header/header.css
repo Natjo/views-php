@@ -17,7 +17,7 @@
     }
 
     #header .link{
-        transition: color 0.3s ease 0s;
+       transition: color 0.3s ease 0s;color: #fff;
     }
 
     #header.hide{
@@ -46,7 +46,7 @@
             color: var(--color-text);
         }
 
-    @media (max-width: 992px) {#header {
+    @media (max-width: 991px) {#header {
         height: 80px
 }
         
@@ -151,7 +151,7 @@
             color: var(--color-6);
         }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 
 #nav {
         position: fixed;

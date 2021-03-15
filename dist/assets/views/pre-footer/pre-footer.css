@@ -34,7 +34,7 @@
             background-image: url(/assets/img/pre-footer/next.svg);
         }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         [data-view=pre-footer] a {
             height: 180px;
         }
