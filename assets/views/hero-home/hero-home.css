@@ -13,8 +13,11 @@
         align-content: center;
         color: #fff;
 
-        h1, a{
+        h1{
             grid-column: 1 / -5;
+        }
+        a{
+            grid-column: 1;
         }
     }
     svg{

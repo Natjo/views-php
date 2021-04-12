@@ -20,7 +20,7 @@
         <source srcset="<?php echo $args["background-medium"]; ?>.jpg" media="(max-width: 767px)" type="image/jpg">
         <source srcset="<?php echo $args["background-large"]; ?>.jpg" media="(max-width: 1399px)" type="image/jpg">
         <source srcset="<?php echo $args["background-wide"]; ?>.jpg" media="(min-width: 1400px)" type="image/jpg">
-        <img src="<?php echo $args["background-medium"]; ?>.jpg" alt="" class="" >
+        <img src="<?php echo $args["background-medium"]; ?>.jpg" alt="" width="960" height="659">
     </picture>
 
     <svg class="corner-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 650" style="enable-background:new 0 0 960 650;" xml:space="preserve" preserveAspectRatio="xMaxYMax meet">

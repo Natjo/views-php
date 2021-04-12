@@ -43,11 +43,14 @@
         }
 
     #footer .list-share a:before {
-                content: "\e902";
-                font-family: var(--font-icon);
-                line-height: 1;
-                color: #fff;
-                font-size: 3.3rem;
+                content: "";
+                background-color: #fff;
+                -webkit-mask: url(/assets/img/icon/linkedin.svg) no-repeat center;
+                        mask: url(/assets/img/icon/linkedin.svg) no-repeat center;
+                -webkit-mask-size: 15px;
+                        mask-size: 15px;
+                width: 33px;
+                height: 33px;
             }
 
     #footer .footer-top {

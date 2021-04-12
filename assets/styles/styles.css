@@ -1,13 +1,13 @@
-/*@import url(assets/styles/fonts.css);
-@import url(assets/styles/reset.css);
-@import url(assets/styles/variables.css);*/
+@import url(/assets/styles/fonts.css);
+@import url(/assets/styles/reset.css);
+@import url(/assets/styles/variables.css);
 
 html {
     font-size: 62.5%;
 }
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+   /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
     margin: 0;
     font-family: var(--font-primary);
     font-size: var(--font-size);
@@ -33,26 +33,24 @@ address {
 
         &:before {
             content: "";
-            font-family: var(--font-icon);
             display: block;
             position: absolute;
             top: 2px;
             left: 0;
-            color: var(--color-1);
-            font-size: 1.2rem;
+            background: var(--color-1);
+            width: 15px;
+            height: 15px;
+            mask-size: 15px;
         }
         &:not(:last-of-type) {
             margin-bottom: 20px;
         }
-        &.address {
-            &:before {
-                content: "\e900";
-            }
+        &.address:before {
+            mask-image: url(/assets/img/icon/tel.svg);
         }
-        &.tel {
-            &:before {
-                content: "\e904";
-            }
+        &.tel:before {
+            mask-image: url(/assets/img/icon/home.svg);
+
         }
     }
 }
@@ -146,15 +144,16 @@ main > article {
     justify-content: center;
 
     &:after {
-        content: "\e929";
-        display: inline-block;
-        font-family: var(--font-icon);
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
         color: var(--color-1);
-        font-weight: 400;
-        vertical-align: middle;
-        transform: translate(0, -1px);
+        mask: url(/assets/img/icon/arrow.svg) ;
+        background-color: var(--color-1);
+        mask-repeat: no-repeat;
+        mask-position: center;
     }
-
     &:hover {
         background: var(--color-3);
         border-color: var(--color-3);
@@ -226,25 +225,33 @@ main > article {
     font-weight: 800;
     transition: all 0.25s ease;
     white-space: nowrap;
-
-    &:after {
-        content: "\e929";
+    display: grid;
+    grid-template-columns: max-content 15px 60px;
+    align-items: center;
+    &:before, &:after{
+        content:"";
+        grid-column: 3;
+        grid-row: 1;
+        transition: all 0.25s ease;
+    }
+    &:before{
         border: 3px solid var(--color-1);
         border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-icon);
-        color: var(--color-1);
-        font-weight: 400;
-        vertical-align: middle;
-        transition: all 0.25s ease;
+        box-sizing: border-box;
+    }
+    &:after {
+        mask: url(/assets/img/icon/arrow.svg) ;
+        background-color: var(--color-1);
+        mask-repeat: no-repeat;
+        mask-position: center;
+  	    mask-size: 12px;
+        will-change: transform;
     }
 
     &:hover {
         color: var(--color-1);
 
-        &:after {
+        &:after,&:before {
             transform: scale(1.1);
         }
     }
@@ -268,18 +275,15 @@ main > article {
     }
 
     @media (--breakpoint-md-down) {
-        &:after {
+        &:after, &:before {
             height: 47px;
             width: 47px;
-            margin-left: 20px;
         }
     }
     @media (--breakpoint-md-up) {
-        &:after {
-            height: 57px;
-            width: 57px;
-            margin-left: 20px;
-            font-size: 1.6rem;
+        &:after, &:before {
+            height: 60px;
+            width: 60px;
         }
     }
 }
@@ -436,8 +440,10 @@ main > article {
     color: var(--color-1);
 
     &:before {
-        font-family: var(--font-icon);
-        font-weight: 400;
+        content: "";
+        width: 32px;
+        height: 32px;
+        background-color: var(--color-1);
     }
     &.plus {
         &:before {
@@ -446,7 +452,8 @@ main > article {
     }
     &.arrow-right {
         &:before {
-            content: "\e929";
+            mask: url(/assets/img/icon/arrow.svg) no-repeat center;
+            mask-size: 10px;
         }
     }
     &.linkedin {

@@ -16,8 +16,12 @@
         color: #fff;
     }
     
-    #hero-home .content h1, #hero-home .content a{
+    #hero-home .content h1{
             grid-column: 1 / -5;
+        }
+    
+    #hero-home .content a{
+            grid-column: 1;
         }
     
     #hero-home svg{

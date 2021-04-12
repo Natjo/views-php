@@ -41,11 +41,12 @@
             height: 33px;
 
             &:before {
-                content: "\e902";
-                font-family: var(--font-icon);
-                line-height: 1;
-                color: #fff;
-                font-size: 3.3rem;
+                content: "";
+                background-color: #fff;
+                mask: url(/assets/img/icon/linkedin.svg) no-repeat center;
+                mask-size: 15px;
+                width: 33px;
+                height: 33px;
             }
         }
     }
