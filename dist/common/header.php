@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"> -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
@@ -20,16 +20,15 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--<link rel="preload" href="assets/fonts/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">-->
-    <link href="assets/styles/styles.css" rel="stylesheet" media="screen"> 
+    <!-- <link href="assets/styles/styles.css" rel="stylesheet" media="screen">  -->
     <?php
-    /*$inline = "";
+    $inline = "";
     $inline .= file_get_contents('assets/styles/reset.css');
     $inline .= file_get_contents('assets/styles/variables.css');
     $inline .= file_get_contents('assets/styles/fonts.css');
     $inline .= file_get_contents('assets/styles/styles.css');
-    echo "<style>".$inline."</style>"; */
+    echo "<style>".$inline."</style>"; 
     ?>
-
     <?php //echo "<style>".file_get_contents('assets/styles/styles.css')."</style>"; ?>
 </head>
 

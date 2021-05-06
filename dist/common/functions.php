@@ -25,28 +25,35 @@ function exist($arg)
 
 $json = json_decode(file_get_contents("assets/views.json"), true);
 $views = array();
-
+$imports = array();
 function views($name, $args = null, $defer = false)
 {
     global $json;
     global $views;
-    
-    //if (!in_array($name, $views[$name])) {
+    global $imports;
+
     if (!array_key_exists($name, $views)) {
         $views[$name] = array(
             "js" => $json[$name]["js"],
             "css" => $json[$name]["css"],
             "defer" => $defer
         );
-       /* if ($json[$name]["css"]) {
-            echo '<link rel="stylesheet" href="' . $json[$name]["css"] . '">' . "\n";
-            //echo '<link rel="preload" href="' . $json[$name]["css"] . '" as="style">' . "\n";
-        }*/
        if ($json[$name]["css"]) {
             $file = $json[$name]["css"];
-            echo "<style>".file_get_contents($file)."</style>";
-        }
+            $content = file_get_contents($file);
+            
+            // gestion des imports css
+            preg_match_all('/@import url\(\/(.*)\);/', $content, $matches, PREG_PATTERN_ORDER);
+            foreach ($matches[1] as $val) {
+                if (!in_array($val, $imports)) {
+                    $content .= file_get_contents($val);
+                    array_push($imports, $val);
+                }
+            }
+            $content = preg_replace('/@import url\(\/(.*)\);/', "", $content);
 
+            echo "<style>".$content."</style>";
+        }
     }
     include("./assets/views/$name/index.php");
 }

@@ -1,8 +1,10 @@
 import Rgpd from "./modules/rgpd/rgpd.js";
-
-Rgpd((status) => {
-    console.log(status);
+window.addEventListener('load', () => {
+    Rgpd((status) => {
+        console.log(status);
+    });
 });
+
 
 // lazyload
 if ('loading' in HTMLImageElement.prototype) {
@@ -13,5 +15,6 @@ if ('loading' in HTMLImageElement.prototype) {
 } else {
     document.querySelectorAll('img[loading]').forEach((img) => img.removeAttribute('loading'));
 }
+
 
 console.log("app.js");

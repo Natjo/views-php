@@ -1,13 +1,1 @@
-#gouvernance {
-    padding-top: var(--margin-lg);
-    padding-bottom: var(--margin-lg);
-}
-
-    #gouvernance header {
-        margin-bottom: var(--margin-lg);
-        grid-column: container;
-    }
-
-    #gouvernance .list{
-        grid-column: 2 / -2;
-    }
+#gouvernance{padding-top:var(--margin-lg);padding-bottom:var(--margin-lg)}#gouvernance header{margin-bottom:var(--margin-lg);grid-column:container}#gouvernance .list{grid-column:2 / -2}

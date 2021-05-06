@@ -49,7 +49,7 @@ views('footer', array(
         const script = document.createElement('script');
         script.type = 'module';
         script.src = file;
-        script.setAttribute('defer', '');
+        script.setAttribute('async', '');
         document.body.appendChild(script);
     }
     const add_style = (href, media) => {
