@@ -110,7 +110,8 @@ watch(src, {recursive: true}, (evt, file) => {
     const dist_file = dist + file;
     const folder = file.split('/')[1]; // module, view, styles, img, fonts ..
     const key = filename.replace(ext, '') // stage, block-intro ...
-   
+    const view = file.split('/')[2]; // footer, header, strate-intro ..
+    
     if(!fs.existsSync(dist_file)) evt = 'add';
 
     if(evt == 'update' || evt == 'add') core.compile(file, dist_file, ext);
@@ -122,7 +123,7 @@ watch(src, {recursive: true}, (evt, file) => {
         json.create(json.datas);
     }
     isFile && evt == 'remove' ? fs.unlinkSync(dist_file) : core.rmDir(dist_file);
-    core.console(folder,filename,evt);
+    core.console(`${folder}-${view}`,filename,evt);
 });
 
 console.log(`I'm Watching you...`);

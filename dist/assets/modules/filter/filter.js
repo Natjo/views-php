@@ -1,1 +1,5 @@
-const filter=()=>{console.log("filter")};export default filter;
+const filter = value => {
+  console.log("filter");
+};
+
+export default filter;

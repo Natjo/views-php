@@ -27,28 +27,14 @@ address {
         position: relative;
         padding-left: 30px;
 
-        &:before {
-            content: "";
-            display: block;
+        .icon{
             position: absolute;
-            top: 2px;
             left: 0;
-            background: var(--color-1);
-            width: 15px;
-            height: 15px;
-            mask-size: 15px;
+            fill: var(--color-1);
         }
+
         &:not(:last-of-type) {
             margin-bottom: 20px;
-        }
-        &.address:before {
-           /* mask-image: url(/assets/img/icon/tel.svg);*/
-            mask-image: url(/assets/img/icon/all.svg#tel);
-        }
-        &.tel:before {
-          /* mask-image: url(/assets/img/icon/home.svg);*/
-           mask-image: url(/assets/img/icon/all.svg#home);
-
         }
     }
 }

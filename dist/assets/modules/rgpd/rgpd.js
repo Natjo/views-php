@@ -1,1 +1,155 @@
-const Rgpd=a=>{const b={create(a,b,c){var d=new Date;d.setTime(d.getTime()+1e3*(60*(60*(24*c)))),document.cookie=`${a}=${b}${c?`; expires=${d.toGMTString()}`:""}; path=/`},read(a){const b=`${a}=`;for(let c of document.cookie.split(";")){for(;" "===c.charAt(0);)c=c.substring(1,c.length);if(0===c.indexOf(b))return c.substring(b.length,c.length)}return null},erase(a){var b=document.location.hostname;0===b.indexOf("www.")&&(b=b.substring(4)),document.cookie=`${a}=; domain=.${b}; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=`,document.cookie=`${a}=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/`},eraseUnused(){for(let a of o)a.checked||a.dataset.cookies.split(",").forEach(a=>b.erase(a))}};let c=!!b.read("rgpd");const d=document.querySelectorAll(".rgpd-link"),e=document.documentElement||window,f="ontouchstart"in e?"touchstart":"click",g=document.getElementById("rgpd-modal"),h=g.querySelector(".btn-accept"),i=g.querySelector(".btn-refuse"),j=g.querySelectorAll(".btn-manage"),k=document.getElementById("rgpd-manage"),l=k.querySelector(".box"),m=k.querySelectorAll(".btn-detail"),n=k.querySelector(".btn-save"),o=k.querySelectorAll("input[type=\"checkbox\"]"),p=k.querySelector(".btn-close");let q,r={};const s=()=>{for(let b in r)r[b]&&"function"==typeof a&&a(b)},t=()=>o.forEach(a=>r[a.value]=!!a.checked),u=()=>{c=!0,g.classList.remove("active"),b.create("rgpd",JSON.stringify(r),30)},v=()=>{t(),s(),u()},w=()=>{o.forEach(a=>a.checked=!1),t(),u()},x=()=>{t(),c||s(),u(),b.eraseUnused()},y=()=>window.scrollTo(0,q);for(let d in!0==c?r=JSON.parse(b.read("rgpd")):o.forEach(a=>r[a.value]=!0),r)for(let a of o)a.value==d&&(a.checked=r[d]);m.forEach(a=>a.onclick=()=>a.classList.toggle("active")),h.onclick=()=>v(),i.onclick=()=>w(),!0==c?s():g.classList.add("active");const z=a=>!l.contains(a.target)&&B(),A=()=>{t(),g.classList.remove("active"),k.classList.add("open"),k.addEventListener("animationend",()=>window.addEventListener(f,z),{once:!0}),q=window.pageYOffset||window.scrollY,window.addEventListener("scroll",y)};j.forEach(a=>{a.onclick=a=>{a.preventDefault(),A()}});const B=()=>{c||g.classList.add("active"),k.classList.add("close"),window.removeEventListener(f,z,!1),window.removeEventListener("scroll",y),m.forEach(a=>a.onclick=()=>a.classList.toggle("active")),k.addEventListener("animationend",()=>{k.classList.remove("open"),k.classList.remove("close")},{once:!0})};d.forEach(a=>a.onclick=a=>{a.stopPropagation(),a.preventDefault(),A()}),n.onclick=()=>{x(),B()},p.onclick=a=>B(a)};export default Rgpd;
+const Rgpd = onexec => {
+  const cookie = {
+    create(name, value, days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value}${days ? `; expires=${date.toGMTString()}` : ''}; path=/`;
+    },
+
+    read(name) {
+      const nameEQ = `${name}=`;
+
+      for (let item of document.cookie.split(';')) {
+        while (item.charAt(0) === ' ') item = item.substring(1, item.length);
+
+        if (item.indexOf(nameEQ) === 0) return item.substring(nameEQ.length, item.length);
+      }
+
+      return null;
+    },
+
+    erase(name) {
+      var hostname = document.location.hostname;
+      if (hostname.indexOf('www.') === 0) hostname = hostname.substring(4);
+      document.cookie = `${name}=; domain=.${hostname}; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=`;
+      document.cookie = `${name}=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/`;
+    },
+
+    eraseUnused() {
+      for (let checkbox of checkboxes) {
+        !checkbox.checked && checkbox.dataset.cookies.split(',').forEach(val => cookie.erase(val));
+      }
+    }
+
+  };
+  let consent = cookie.read('rgpd') ? true : false;
+  const links = document.querySelectorAll('.rgpd-link');
+  const cookieDuration = 30;
+  const strictmode = true;
+  const root = document.documentElement || window;
+  const clicktouch = 'ontouchstart' in root ? 'touchstart' : 'click';
+  const modal = document.getElementById('rgpd-modal');
+  const btn_accept = modal.querySelector('.btn-accept');
+  const btn_refuse = modal.querySelector('.btn-refuse');
+  const btn_manage = modal.querySelectorAll('.btn-manage');
+  const manage = document.getElementById('rgpd-manage');
+  const manage_box = manage.querySelector('.box');
+  const btn_details = manage.querySelectorAll('.btn-detail');
+  const btn_save = manage.querySelector('.btn-save');
+  const checkboxes = manage.querySelectorAll('input[type="checkbox"]');
+  const btn_close = manage.querySelector('.btn-close');
+  let scrollTop;
+  let cats = {};
+
+  const execute = () => {
+    for (let key in cats) cats[key] && typeof onexec === 'function' && onexec(key);
+  };
+
+  const status = () => checkboxes.forEach(item => cats[item.value] = item.checked ? true : false);
+
+  const set_consent = () => {
+    consent = true;
+    modal.classList.remove('active');
+    cookie.create('rgpd', JSON.stringify(cats), cookieDuration);
+  };
+
+  const accept = () => {
+    status();
+    execute();
+    set_consent();
+  };
+
+  const denie = () => {
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+    status();
+    set_consent();
+  };
+
+  const save = () => {
+    status();
+    !consent && execute();
+    set_consent();
+    cookie.eraseUnused();
+  };
+
+  const disableScroll = () => window.scrollTo(0, scrollTop);
+
+  if (consent === true) cats = JSON.parse(cookie.read('rgpd'));else if (!strictmode) {
+    status();
+    checkboxes.forEach(checkbox => cats[checkbox.value] = true);
+    execute();
+  } else checkboxes.forEach(checkbox => cats[checkbox.value] = true);
+
+  for (let key in cats) {
+    for (let checkbox of checkboxes) {
+      if (checkbox.value == key) checkbox.checked = cats[key];
+    }
+  }
+
+  btn_details.forEach(btn => btn.onclick = () => btn.classList.toggle('active'));
+
+  btn_accept.onclick = () => accept();
+
+  btn_refuse.onclick = () => denie();
+
+  consent == true ? execute() : modal.classList.add('active');
+
+  const clickoutside = e => !manage_box.contains(e.target) && close();
+
+  const open = () => {
+    status();
+    modal.classList.remove('active');
+    manage.classList.add('open');
+    manage.addEventListener('animationend', e => window.addEventListener(clicktouch, clickoutside), {
+      once: true
+    });
+    scrollTop = window.pageYOffset || window.scrollY;
+    window.addEventListener('scroll', disableScroll);
+  };
+
+  btn_manage.forEach(btn => {
+    btn.onclick = e => {
+      e.preventDefault();
+      open();
+    };
+  });
+
+  const close = e => {
+    if (!consent) modal.classList.add('active');
+    manage.classList.add('close');
+    window.removeEventListener(clicktouch, clickoutside, false);
+    window.removeEventListener('scroll', disableScroll);
+    btn_details.forEach(btn => btn.onclick = () => btn.classList.toggle('active'));
+    manage.addEventListener('animationend', e => {
+      manage.classList.remove('open');
+      manage.classList.remove('close');
+    }, {
+      once: true
+    });
+  };
+
+  links.forEach(link => link.onclick = e => {
+    e.stopPropagation();
+    e.preventDefault();
+    open();
+  });
+
+  btn_save.onclick = () => {
+    save();
+    close();
+  };
+
+  btn_close.onclick = e => close(e);
+};
+
+export default Rgpd;

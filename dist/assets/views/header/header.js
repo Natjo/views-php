@@ -1,1 +1,60 @@
-const header=document.getElementById("header"),nav=document.getElementById("nav"),btn_nav=header.querySelector(".btn-nav");var oldscrollY,oldstatus,trigger,scrollDown=!1,scrollY=0,status=0;const resize=()=>trigger=header.clientHeight,change=()=>{1==scrollDown&&header.classList.add("fixed"),0===status&&(header.classList.remove("hide"),header.classList.remove("show"),header.classList.remove("fixed")),1===status&&(header.classList.remove("show"),header.classList.add("hide")),2===status&&(header.classList.remove("hide"),header.classList.add("show"))},scroll=()=>{scrollY=window.pageYOffset,scrollDown=!!(0<oldscrollY-scrollY),scrollY>trigger&&(status=!1===scrollDown?1:2),0===scrollY&&(status=0),oldstatus!==status&&change(),oldstatus=status,oldscrollY=scrollY},open=()=>{document.body.classList.add("hasPopin"),btn_nav.classList.add("active"),nav.classList.add("open")},close=()=>{document.body.classList.remove("hasPopin"),btn_nav.classList.remove("active"),nav.classList.remove("open")};btn_nav.onclick=()=>btn_nav.classList.contains("active")?close():open(),window.addEventListener("scroll",scroll,!1),window.addEventListener("resize",resize,!1),resize(),window.pageYOffset>trigger&&header.classList.add("show");
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
+const btn_nav = header.querySelector('.btn-nav');
+var scrollDown = false;
+var scrollY = 0;
+var oldscrollY;
+var status = 0;
+var oldstatus;
+var trigger;
+
+const resize = () => trigger = header.clientHeight;
+
+const change = () => {
+  scrollDown == 1 && header.classList.add('fixed');
+
+  if (status === 0) {
+    header.classList.remove('hide');
+    header.classList.remove('show');
+    header.classList.remove('fixed');
+  }
+
+  if (status === 1) {
+    header.classList.remove('show');
+    header.classList.add('hide');
+  }
+
+  if (status === 2) {
+    header.classList.remove('hide');
+    header.classList.add('show');
+  }
+};
+
+const scroll = () => {
+  scrollY = window.pageYOffset;
+  scrollDown = oldscrollY - scrollY > 0 ? true : false;
+  if (scrollY > trigger) status = scrollDown === false ? 1 : 2;
+  if (scrollY === 0) status = 0;
+  oldstatus !== status && change();
+  oldstatus = status;
+  oldscrollY = scrollY;
+};
+
+const open = () => {
+  document.body.classList.add('hasPopin');
+  btn_nav.classList.add('active');
+  nav.classList.add('open');
+};
+
+const close = () => {
+  document.body.classList.remove('hasPopin');
+  btn_nav.classList.remove('active');
+  nav.classList.remove('open');
+};
+
+btn_nav.onclick = () => btn_nav.classList.contains('active') ? close() : open();
+
+window.addEventListener('scroll', scroll, false);
+window.addEventListener('resize', resize, false);
+resize();
+window.pageYOffset > trigger && header.classList.add('show');

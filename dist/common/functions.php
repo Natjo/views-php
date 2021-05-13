@@ -43,7 +43,7 @@ function views($name, $args = null, $defer = false)
             $content = file_get_contents($file);
             
             // gestion des imports css
-            preg_match_all('/@import url\(\/(.*)\);/', $content, $matches, PREG_PATTERN_ORDER);
+            preg_match_all("/@import url\(\/(.*)\);/U", $content, $matches, PREG_PATTERN_ORDER);
             foreach ($matches[1] as $val) {
                 if (!in_array($val, $imports)) {
                     $content .= file_get_contents($val);
@@ -52,7 +52,11 @@ function views($name, $args = null, $defer = false)
             }
             $content = preg_replace('/@import url\(\/(.*)\);/', "", $content);
 
-            echo "<style>".$content."</style>";
+
+           //echo "<style>".$content."</style>";
+
+
+          // echo '<link href="'.$file.'" rel="stylesheet" media="screen"> ';
         }
     }
     include("./assets/views/$name/index.php");

@@ -1,1 +1,33 @@
-import Swiper from"../swiper/swiper-bundle.esm.browser.min.js";import Breakpoint from"../breakpoint/breakpoint.js";function Swipe2grid(a){document.querySelectorAll(".swipe2grid").forEach(b=>{let c;const d=new Breakpoint(a),e=b.querySelector("ul"),f=e.querySelectorAll(".item");d.above=()=>{b.swiper!==void 0&&b.swiper.destroy(!0,!0),b.classList.remove("swiper-container"),e.classList.remove("swiper-wrapper"),f.forEach(a=>a.classList.remove("swiper-slide"))},d.under=()=>{console.log("under"),b.classList.add("swiper-container"),e.classList.add("swiper-wrapper"),f.forEach(a=>a.classList.add("swiper-slide")),c=new Swiper(".swipe2grid",{spaceBetween:480>window.innerWidth?20:50,slidesPerView:"auto",centeredSlides:!0})}})}export default Swipe2grid;
+import Swiper from '../swiper/swiper-bundle.esm.browser.min.js';
+import Breakpoint from '../breakpoint/breakpoint.js';
+
+function Swipe2grid(value) {
+  const selector = '.swipe2grid';
+  document.querySelectorAll(selector).forEach(el => {
+    let swiper;
+    const breakpoint = new Breakpoint(value);
+    const ul = el.querySelector('ul');
+    const lis = ul.querySelectorAll('.item');
+
+    breakpoint.above = () => {
+      if (el.swiper !== undefined) el.swiper.destroy(true, true);
+      el.classList.remove('swiper-container');
+      ul.classList.remove('swiper-wrapper');
+      lis.forEach(li => li.classList.remove('swiper-slide'));
+    };
+
+    breakpoint.under = () => {
+      console.log("under");
+      el.classList.add('swiper-container');
+      ul.classList.add('swiper-wrapper');
+      lis.forEach(li => li.classList.add('swiper-slide'));
+      swiper = new Swiper(selector, {
+        spaceBetween: window.innerWidth < 480 ? 20 : 50,
+        slidesPerView: 'auto',
+        centeredSlides: true
+      });
+    };
+  });
+}
+
+export default Swipe2grid;

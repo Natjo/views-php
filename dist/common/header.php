@@ -20,7 +20,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--<link rel="preload" href="assets/fonts/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">-->
-    <!-- <link href="assets/styles/styles.css" rel="stylesheet" media="screen">  -->
+     <!-- <link href="assets/styles/styles.css" rel="stylesheet" media="screen"> -->
     <?php
     $inline = "";
     $inline .= file_get_contents('assets/styles/reset.css');
@@ -30,6 +30,18 @@
     echo "<style>".$inline."</style>"; 
     ?>
     <?php //echo "<style>".file_get_contents('assets/styles/styles.css')."</style>"; ?>
+
+<link href="assets/views/header/header.css" rel="stylesheet" media="screen">
+<link href="assets/views/hero-home/hero-home.css" rel="stylesheet" media="screen">
+<link href="assets/views/solutions-3-lines/solutions-3-lines.css" rel="stylesheet" media="screen">
+<link href="assets/views/section-header/section-header.css" rel="stylesheet" media="screen">
+<link href="assets/views/card-solution/card-solution.css" rel="stylesheet" media="screen">
+<link href="assets/views/push-page/push-page.css" rel="stylesheet" media="screen">
+<link href="assets/views/breathing/breathing.css" rel="stylesheet" media="screen">
+<link href="assets/views/intro-text-image/intro-text-image.css" rel="stylesheet" media="screen">
+<link href="assets/views/footer/footer.css" rel="stylesheet" media="screen">
+<link href="assets/views/block-text-image/block-text-image.css" rel="stylesheet" media="screen">
+
 </head>
 
 <body>

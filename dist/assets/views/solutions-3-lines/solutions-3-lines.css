@@ -1,1 +1,7 @@
-@import url(/assets/modules/swipe2grid/swipe2grid.css);@import url(/assets/modules/swiper/swiper-custom.css);.solutions-3-lines{margin-top:var(--margin-xlg);margin-bottom:var(--margin-xlg)}
+@import url(/assets/modules/swipe2grid/swipe2grid.css);
+@import url(/assets/modules/swiper/swiper-custom.css);
+
+.solutions-3-lines{
+    margin-top: var(--margin-xlg);
+    margin-bottom: var(--margin-xlg);
+}

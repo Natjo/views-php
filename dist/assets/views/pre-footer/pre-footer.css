@@ -1,1 +1,54 @@
-[data-view=pre-footer]{background:var(--color-6);position:relative;margin-bottom:calc(-1 * var(--margin-xlg))}[data-view=pre-footer] .picto{position:absolute;right:10px;bottom:15px}[data-view=pre-footer] a{position:relative;display:flex;align-items:center;color:#fff;font-family:var(--font-secondary);padding-left:5%;padding-right:5%;line-height:1.2;background-repeat:no-repeat;background-position:100% 0;background-color:transparent;background-size:auto 100%;font-size:var(--font-size-lg)}[data-view=pre-footer] a:first-of-type{background-image:url(/assets/img/pre-footer/prev.svg)}[data-view=pre-footer] a:last-of-type{background-image:url(/assets/img/pre-footer/next.svg)}@media(max-width:767px){[data-view=pre-footer] a{height:180px}}@media(min-width:768px){[data-view=pre-footer]{height:175px;height:120px;display:flex}[data-view=pre-footer] a{justify-content:center;width:50%;height:100%}}
+[data-view=pre-footer] {
+    background: var(--color-6);
+    position: relative;
+    margin-bottom: calc(-1 * var(--margin-xlg));
+}
+
+    [data-view=pre-footer] .picto {
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+    }
+
+    [data-view=pre-footer] a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-family: var(--font-secondary);
+        padding-left: 5%;
+        padding-right: 5%;
+        line-height: 1.2;
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+        background-color: transparent;
+        background-size: auto 100%;
+        font-size: var(--font-size-lg);
+    }
+
+    [data-view=pre-footer] a:first-of-type {
+            background-image: url(/assets/img/pre-footer/prev.svg);
+        }
+
+    [data-view=pre-footer] a:last-of-type {
+            background-image: url(/assets/img/pre-footer/next.svg);
+        }
+
+    @media (max-width: 767px) {
+        [data-view=pre-footer] a {
+            height: 180px;
+        }
+    }
+
+    @media (min-width: 768px) {[data-view=pre-footer] {
+        height: 175px;
+        height: 120px;
+        display: flex
+}
+
+        [data-view=pre-footer] a {
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+        }
+    }

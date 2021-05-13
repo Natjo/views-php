@@ -26,6 +26,12 @@
     .list-share {
         margin-left: 20px;
         vertical-align: middle;
+       
+        .icon{
+           
+                fill: gold;
+            
+        }
 
         li {
             width: 33px;
@@ -40,14 +46,7 @@
             width: 33px;
             height: 33px;
 
-            &:before {
-                content: "";
-                background-color: #fff;
-                mask: url(/assets/img/icon/linkedin.svg) no-repeat center;
-                mask-size: 15px;
-                width: 33px;
-                height: 33px;
-            }
+            fill: var(--color-1);
         }
     }
     .footer-top {

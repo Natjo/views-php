@@ -1,1 +1,13 @@
-function Breakpoint(a){this.above=function(){},this.under=function(){};const b=window.matchMedia(`(min-width:${a}px)`);b.addListener(a=>a.matches?this.above():this.under()),setTimeout(()=>b.matches?this.above():this.under(),1)}export default Breakpoint;
+function Breakpoint(value) {
+  this.above = function () {};
+
+  this.under = function () {};
+
+  const breakpointChecker = e => e.matches ? this.above() : this.under();
+
+  const gg = window.matchMedia(`(min-width:${value}px)`);
+  gg.addListener(breakpointChecker);
+  setTimeout(() => gg.matches ? this.above() : this.under(), 1);
+}
+
+export default Breakpoint;

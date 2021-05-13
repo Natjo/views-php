@@ -1,1 +1,257 @@
-.form .field{position:relative;display:flex}.form .field>label{font-weight:400}.form [type=text],.form [type=email],.form [type=password],.form [type=tel],.form [type=date],.form [type=number],.form [type=url]{font-family:inherit;font-size:inherit;color:inherit;padding:0 20px;height:50px;width:100%;background:0;background-color:#fff;border:0;margin:0;font-weight:300}.form [type=text]:focus,.form [type=email]:focus,.form [type=password]:focus,.form [type=tel]:focus,.form [type=date]:focus,.form [type=number]:focus,.form [type=url]:focus{outline:1px solid var(--color-3)}.form [type=text].error,.form [type=email].error,.form [type=password].error,.form [type=tel].error,.form [type=date].error,.form [type=number].error,.form [type=url].error{outline:1px solid var(--color-error) !important;color:var(--color-error)}.form textarea{font-family:inherit;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:inherit;color:inherit;width:100%;resize:vertical;padding:20px 0 20px 20px;background:0;background-color:#fff;border:0;margin:0;min-height:160px;font-weight:300}.form textarea:focus{outline:1px solid var(--color-3)}.form textarea.error{border-color:var(--color-error)}.form .field-error-msg{color:var(--color-error);margin-top:6px;font-size:13px;position:absolute;top:100%;right:0}.form [type=submit]{background:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;color:inherit;font-weight:500;padding:0;cursor:pointer;padding-bottom:4px}.form .action{display:flex;justify-content:center;margin-top:40px;width:100%}.form .checkbox [type=checkbox]{display:none}.form .checkbox .error-msg{right:auto;left:0}.form .checkbox label{font-size:1.4rem;cursor:pointer;display:flex;align-items:flex-start;font-weight:300}.form .checkbox label:before{content:"";width:22px;height:22px;flex:0 0 22px;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-3);margin-top:-2px;margin-right:15px;transition:all .2s ease;color:#fff;font-size:.9rem}.form .checkbox label:hover:before{background:var(--color-3)}.form .checkbox [type=checkbox]:checked+label:before{content:"\e92e";font-family:var(--font-icon);border-color:var(--color-3);background:var(--color-3)}.form select{-webkit-appearance:none;-moz-appearance:none;appearance:none;height:50px;padding:0 60px 0 20px;outline:0;width:100%;max-width:312px;border-radius:0;background:#fff url(/assets/img/caret.svg) no-repeat right 10px center;background-size:auto 9px;border:0;margin:0;font-weight:300}.form select.error{outline:1px solid var(--color-error) !important;color:var(--color-error)}.form select option{color:var(--color-3);font-weight:300}.form select:-moz-focusring,.form select::-moz-focus-inner{outline:0;color:transparent !important;text-shadow:0 0 0 #000 !important}.form select::-ms-expand{display:none}.form small{font-size:var(--font-size-small)}@media(max-width:991px){.form .field{flex-direction:column;margin-bottom:20px}.form .field>label{margin-bottom:5px;padding-right:20px}}@media(min-width:992px){.form [type=text],.form [type=email],.form [type=password],.form [type=tel],.form [type=date],.form [type=number],.form [type=url],.form textarea,.form select{max-width:60%}.form .field{align-items:flex-start;justify-content:space-between;margin-bottom:40px}.form .field>label{height:50px;display:flex;align-items:center}}.form input:-webkit-autofill,.form input:-webkit-autofill:hover,.form input:-webkit-autofill:focus,.form textarea:-webkit-autofill,.form textarea:-webkit-autofill:hover,.form textarea:-webkit-autofill:focus,.form select:-webkit-autofill,.form select:-webkit-autofill:hover,.form select:-webkit-autofill:focus{-webkit-text-fill-color:inherit;box-shadow:0 0 0 1000px rgba(255,255,255,0) inset;background-color:rgba(255,255,255,0);-webkit-transition:background-color 5000s ease-in-out 0s;transition:background-color 5000s ease-in-out 0s}.form ::-moz-placeholder{font-style:normal;font-family:inherit;opacity:.5;font-weight:300;color:var(--color-3);font-size:inherit}.form ::placeholder{font-style:normal;font-family:inherit;opacity:.5;font-weight:300;color:var(--color-3);font-size:inherit}.form .error::-moz-placeholder{color:var(--color-error)}.form .error::placeholder{color:var(--color-error)}
+.form .field {
+        position: relative;
+        display: flex;
+    }
+
+        .form .field > label{
+            font-weight: 400;
+        }
+
+    .form [type=text],
+    .form [type=email],
+    .form [type=password],
+    .form [type=tel],
+    .form [type=date],
+    .form [type=number],
+    .form [type=url] {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        padding: 0 20px;
+        height: 50px;
+        width: 100%;
+        background: none;
+        background-color: #fff;
+        border: none;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .form [type=text]:focus,.form [type=email]:focus,.form [type=password]:focus,.form [type=tel]:focus,.form [type=date]:focus,.form [type=number]:focus,.form [type=url]:focus{
+            outline: 1px solid var(--color-3);
+        }
+
+    .form [type=text].error,.form [type=email].error,.form [type=password].error,.form [type=tel].error,.form [type=date].error,.form [type=number].error,.form [type=url].error{
+            outline: 1px solid var(--color-error)!important;
+            color: var(--color-error);
+        }
+
+    .form textarea {
+        font-family: inherit;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+		resize: vertical;
+        padding: 20px 0 20px 20px;
+        background: none;
+        background-color: #fff;
+		border: none;
+        margin: 0;
+        min-height: 160px;
+        font-weight: 300;
+    }
+
+    .form textarea:focus{
+            outline: 1px solid var(--color-3);
+        }
+
+    .form textarea.error{
+            border-color: var(--color-error);
+        }
+
+    .form .field-error-msg{
+        color: var(--color-error);
+        margin-top: 6px;
+        font-size: 13px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+
+    .form [type=submit] {
+        background: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        border: none;
+        color: inherit;
+        font-weight: 500;
+        padding: 0;
+        cursor: pointer;
+        padding-bottom: 4px; 
+    }
+
+    .form .action {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .form .checkbox [type=checkbox]{
+            display: none;
+        }
+
+    .form .checkbox .error-msg{
+            right: auto;
+            left: 0;
+        }
+
+    .form .checkbox label{ 
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 300;
+        }
+
+    .form .checkbox label:before{
+                content: "";
+                width: 22px;
+                height: 22px;
+                flex: 0 0 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid var(--color-3);
+                margin-top: -2px;
+                margin-right: 15px;
+                transition: all .2s ease;
+                color: #fff; 
+                font-size: .9rem;
+            }
+
+    .form .checkbox label:hover:before{
+                    background: var(--color-3);
+                }
+
+    .form .checkbox [type=checkbox]:checked + label:before{
+                content: "\e92e";
+                font-family: var(--font-icon);
+                border-color: var(--color-3); 
+                background: var(--color-3);
+            }
+
+    .form select {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        height: 50px;
+		padding: 0 60px 0 20px;
+		outline: none;
+        width: 100%;
+        max-width: 312px;
+		border-radius: 0;
+		background: #fff url(/assets/img/caret.svg) no-repeat right 10px center;
+        background-size: auto 9px;
+        border: none;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .form select.error{
+            outline: 1px solid var(--color-error)!important;
+            color: var(--color-error);
+        }
+
+    .form select option{
+            color: var(--color-3);
+            font-weight: 300;
+		}
+
+    .form select:-moz-focusring, 
+        .form select::-moz-focus-inner{
+			outline: none;
+			color: transparent !important;
+			text-shadow: 0 0 0 #000 !important;
+        }
+
+    .form select::-ms-expand {
+      	    display: none;
+    	}
+
+    .form small{
+        font-size: var(--font-size-small);
+    }
+
+    @media (max-width: 991px) {
+        .form .field{
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+            .form .field >label{
+                margin-bottom: 5px;
+                padding-right: 20px;
+            } 
+    }
+
+    @media (min-width: 992px) {
+        .form [type=text],
+        .form [type=email],
+        .form [type=password],
+        .form [type=tel],
+        .form [type=date],
+        .form [type=number],
+        .form [type=url],
+        .form textarea,
+        .form select{
+            max-width: 60%;
+        }
+        .form .field{
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+            .form .field >label{
+                height: 50px;
+                display: flex;
+                align-items: center;
+            } 
+    }
+
+    .form input:-webkit-autofill,
+    .form input:-webkit-autofill:hover,
+    .form input:-webkit-autofill:focus,
+    .form textarea:-webkit-autofill,
+    .form textarea:-webkit-autofill:hover,
+    .form textarea:-webkit-autofill:focus,
+    .form select:-webkit-autofill,
+    .form select:-webkit-autofill:hover,
+    .form select:-webkit-autofill:focus {
+        -webkit-text-fill-color: inherit;
+        box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+        background-color: rgba(255, 255, 255, 0);
+        -webkit-transition: background-color 5000s ease-in-out 0s;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .form ::-moz-placeholder {
+        font-style: normal;
+        font-family: inherit;
+        opacity: .5;
+        font-weight: 300;
+        color: var(--color-3);
+        font-size: inherit;
+    }
+
+    .form ::placeholder {
+        font-style: normal;
+        font-family: inherit;
+        opacity: .5;
+        font-weight: 300;
+        color: var(--color-3);
+        font-size: inherit;
+    }
+
+    .form .error::-moz-placeholder {
+        color: var(--color-error);
+    }
+
+    .form .error::placeholder {
+        color: var(--color-error);
+    }

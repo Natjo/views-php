@@ -3,12 +3,14 @@
         <a href="/" class="logo"><img src="<?= THEME_URL ?>assets/img/logo-small.svg" width="85" height="85" alt="Atream" loading="lazy"></a>
         <address>
             <div class="address">
+                <svg class="icon" width="15" height="15" aria-hidden="true"><use xlink:href="/assets/img/icons.svg#home"></use></svg>
                 <?php if (exist($args["address"])) : ?>
                     <?= $args["address"]; ?>
                 <?php endif; ?>
             </div>
 
             <div class="tel">
+                <svg class="icon" width="15" height="15" aria-hidden="true"><use xlink:href="/assets/img/icons.svg#tel"></use></svg>
                 <?php if (exist($args["tel"])) : ?>
                     <?= $args["tel"]; ?>
                 <?php endif; ?>
@@ -33,13 +35,14 @@
             </ul>
             <ul class="list-share">
                 <li>
-                    <a href="<?= $args["linkedin"]; ?>" class="linkedin" aria-label="linkedin"></a>
+                    <a href="<?= $args["linkedin"]; ?>" class="linkedin" aria-label="linkedin">
+                        <svg class="icon" width="9" height="9" aria-hidden="true"><use xlink:href="/assets/img/icons.svg#linkedin"></use></svg>
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-
         <ul>
             <?php if (is_array($args["nav"])) : ?>
                 <?php foreach ($args["nav"] as $item) : ?>

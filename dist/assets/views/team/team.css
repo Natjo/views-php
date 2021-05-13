@@ -1,1 +1,73 @@
-#team{padding-top:var(--margin-lg);padding-bottom:var(--margin-lg)}#team header{margin-bottom:var(--margin-lg)}#team .sidebar{grid-column:1 / 5}#team .filters-title{border-top:2px solid var(--color-3);height:90px;display:flex;align-items:center;font-size:20px;font-weight:400}#team .filters button{height:36px;background:var(--color-1);color:#fff;padding:0 10px;transition:background .3s ease}#team .filters button.active{background:var(--color-3)}@media(hover:hover) and (pointer:fine){#team .filters button:hover{background:var(--color-3)}}#team .list{grid-column:5 / -1;display:grid;grid-template-columns:repeat(3,1fr);grid-gap:var(--gap)}@media(max-width:991px){#team .filters{display:flex;flex-wrap:wrap;margin:-5px;margin-bottom:20px}#team .filters li{display:inline-block;margin:5px}}@media(min-width:992px){#team .filters{position:sticky;top:80px}#team .filters li:not(:last-child){margin-bottom:10px}}
+#team {
+    padding-top: var(--margin-lg);
+    padding-bottom: var(--margin-lg);
+}
+
+    #team header {
+        margin-bottom: var(--margin-lg);
+    }
+
+    #team .sidebar {
+        grid-column: 1 / 5;
+    }
+
+    #team .filters-title{
+        border-top: 2px solid var(--color-3);
+        height: 90px;
+        display:flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    #team .filters button{
+            height: 36px;
+            background: var(--color-1);
+            color: #fff;
+            padding: 0 10px;
+            transition: background .3s ease;
+        }
+
+    #team .filters button.active{
+                background: var(--color-3);
+            }
+
+    @media(hover: hover) and (pointer: fine) {
+                #team .filters button:hover{
+                    background: var(--color-3);
+                }
+            }
+
+    #team .list {
+        grid-column: 5 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: var(--gap);
+    }
+
+    @media (max-width: 991px) {
+
+        #team .filters{
+            display: flex;
+            flex-wrap: wrap;
+            margin: -5px;
+            margin-bottom: 20px;
+        }
+            
+            #team .filters li{
+                display: inline-block;
+                margin: 5px;
+            }
+    }
+
+    @media (min-width: 992px) {
+
+        #team .filters{
+            position: sticky;
+            top: 80px;
+    
+        }
+                #team .filters li:not(:last-child){
+                    margin-bottom: 10px;
+                }
+    }

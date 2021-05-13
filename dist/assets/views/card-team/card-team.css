@@ -1,1 +1,49 @@
-.card-team{position:relative;display:flex;flex-direction:column;height:100%}.card-team img{width:100%;margin-bottom:30px}.card-team svg{width:100%;height:auto;margin-bottom:30px}.card-team .bg{width:100%;margin-bottom:30px}.card-team .function{margin-bottom:20px;font-weight:800;color:var(--color-1)}.card-team h3{margin-bottom:20px}.card-team .desc{margin-bottom:20px}.card-team .cta{margin-left:auto}.card-team .footer{margin-top:auto;display:flex}.card-team .footer>*:not(:nth-last-child(1)){margin-right:10px}
+.card-team{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .card-team img{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+    .card-team svg{
+		width: 100%;
+		height: auto;
+		margin-bottom: 30px;
+	}
+
+    .card-team .bg{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+    .card-team .function{
+		margin-bottom: 20px;
+		font-weight: 800;
+		color: var(--color-1);
+    }
+
+    .card-team h3{
+		margin-bottom: 20px;
+    }
+
+    .card-team .desc{
+		margin-bottom: 20px;
+   	}
+
+    .card-team .cta{
+		margin-left: auto;
+   	}
+
+    .card-team .footer{
+		margin-top: auto;
+		display: flex;
+   }
+
+    .card-team .footer >*:not(:nth-last-child(1)){
+			margin-right: 10px;
+		}
