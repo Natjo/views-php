@@ -1,8 +1,9 @@
-<?php
-global $isLight;
-$isLight = true;
-include("common/header.php"); 
+<?php 
+    global $isLight;
+    $isLight = true;
+    include("common/functions.php"); 
 ?>
+
 
 <main role="main">
 
@@ -16,7 +17,7 @@ include("common/header.php");
             "background-medium" => "/assets/img/header-homepage/bg-medium",
             "background-large" => "/assets/img/header-homepage/bg-large",
             "background-wide" => "/assets/img/header-homepage/bg-wide"
-        ), true);
+        ));
         ?>
 
         <?php
@@ -43,7 +44,7 @@ include("common/header.php");
                     "pattern" => "pattern-2"
                 )
             )
-        ), true);
+        ));
         ?>
 
         <?php
@@ -108,4 +109,5 @@ include("common/header.php");
     </section>
 </main>
 
-<?php include("common/footer.php"); ?>
+
+<?php include("common/template.php"); ?>

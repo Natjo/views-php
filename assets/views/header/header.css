@@ -64,20 +64,13 @@
             align-items: center;
             justify-content: center;
 
-            &:before {
-                content: "\e90e";
-                font-family: var(--font-icon);
-                color: var(--color-1);
-                font-size: 3.2rem;
+            .icon {
+                fill: var(--color-1);
             }
 
             &.active {
                 background: #fff;
                 border-color: #fff;
-
-                &:before {
-                    content: "\e92a";
-                }
             }
         }
     }
@@ -143,9 +136,7 @@
     .private_space {
         width: 20px;
         height: 20px;
-        mask: url(/assets/img/icon/user.svg);
-        background-color: var(--color-6);
-  	    mask-size: cover;
+        fill: var(--color-6);
     }
 
     @media (--breakpoint-lg-down) {
@@ -205,28 +196,27 @@
             position: relative;
             white-space: nowrap;
 
-            &:after {
-                content: "";
-                display: block;
+            .icon{
+                width: 20px;
+                height: 20px;
                 position: absolute;
-                top: 100%;
+                top: calc(100% - 10px);
                 left: 50%;
-                transform: translateX(-50%) translateY(0px) rotate(90deg);
                 opacity: 0;
                 transition: all 0.3s ease;
                 pointer-events: none;
-                mask: url(/assets/img/icon/arrow.svg) no-repeat center;
-                background: var(--color-1);
-                width: 10px;
-                height: 10px;
+                fill: var(--color-1);
+                transform-origin: center;
+                transform: translateX(-50%) translateY(0) rotate(90deg);
             }
+
             &:hover,
             &.active {
                 color: var(--color-1);
-                &:after {
-                    transform: translateX(-50%) translateY(5px) rotate(90deg);
-                    opacity: 1;
-                }
+               .icon{
+                transform: translateX(-50%) translateY(5px) rotate(90deg);
+                opacity: 1;
+               }
             }
         }
         .extra {

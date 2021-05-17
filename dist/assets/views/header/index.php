@@ -5,17 +5,17 @@
     </svg>
     </a>
     
-    <button class="btn-nav"></button>
+    <button class="btn-nav"><?= icon('burger', 15, 15); ?></button>
     <nav id="nav" role="navigation">
         <ul class="level0" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
             <?php foreach ($args["items"] as $item) : ?>
                 <li itemprop="name">
-                    <a href="<?= $item["href"]; ?>" itemprop="url" class="link"><?= $item["name"]; ?></a>
+                    <a href="<?= $item["href"]; ?>" itemprop="url" class="link"><?= $item["name"]; ?><?= icon('arrow', 10, 10); ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
         <div class="extra">
-            <a href="http://atream.code/news/" class="private_space" target="_blank" rel="noopener" aria-label="Espace privé"></a>
+            <a href="http://atream.code/news/" class="private_space" target="_blank" rel="noopener" aria-label="Espace privé"><?= icon('user', 20, 20); ?></a>
         </div>
     </nav>
 </header>

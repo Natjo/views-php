@@ -10,6 +10,7 @@ const watch = require('node-watch');
 const isProd = process.argv[2] == '--prod' ? true : false;
 const src = 'assets/';
 const dist = 'dist/';
+const styles = ['reset.css', 'variables.css', 'fonts.css', 'styles.css', 'customMedias.css'];
 
 
 const json = {
@@ -40,12 +41,14 @@ const core = {
                 const file = path.resolve(dir, res);
                 const stat = fs.statSync(file);
                 if (stat && stat.isDirectory()) recursive(file);
-                else if (!/.DS_Store$/.test(file)) {
-                    const name = file.replace(`${__dirname}/`, '');
-                    const filename = path.parse(name).base;
-                    const ext = path.extname(filename);
-                    if(/\/views\//.test(file)) json.add(name, filename, ext);
-                    core.compile(file, dist + name, ext); 
+                else if (!/.DS_Store$/.test(file)) { 
+                    if(!/\/styles\//.test(file)){
+                        const name = file.replace(`${__dirname}/`, '');
+                        const filename = path.parse(name).base;
+                        const ext = path.extname(filename);
+                        if(/\/views\//.test(file)) json.add(name, filename, ext);
+                        core.compile(file, dist + name, ext); 
+                    }
                 }
             });
         }
@@ -90,11 +93,19 @@ const core = {
         if(evt == 'update') status = `32mupdated`;
         if(evt == 'add') status = `36madded`;
         console.log(`\x1b[90m\x1b[3m(${folder})\x1b[39m\x1b[23m`, `\x1b[1m${filename}\x1b[22m`, `\x1b[${status}\x1b[39m`, `\x1b[3m${core.time()}s\x1b[23m`);
+    }, 
+    compile_syles(){
+        let str;
+        for(let file of styles){
+            str += fs.readFileSync(`${src}styles/${file}`, 'utf8');
+        }
+        core.postcss(str, `${dist}assets/styles/styles.css`);
     }
 }
 
 core.rmDir(`${dist}${src}`);
 core.dirScan(src);
+core.compile_syles();
 json.create();
 
 console.log(`${core.time()}s`);  
@@ -115,7 +126,8 @@ watch(src, {recursive: true}, (evt, file) => {
     if(!fs.existsSync(dist_file)) evt = 'add';
 
     if(evt == 'update' || evt == 'add') core.compile(file, dist_file, ext);
-    
+    if(folder === 'styles') core.compile_syles();
+
     if(folder == 'views' && ext != '.php'){
         if(isFile) json.datas[key][ext.replace('.','')] = ''; 
         else delete json.datas[key];

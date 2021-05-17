@@ -27,13 +27,13 @@
         --ctr-margin: 20px;
         --gap: 20px;
 
-        --font-size-xsm: 1.1rem;
-        --font-size-sm: 1.2rem;
-        --font-size: 1.4rem;
-        --font-size-md: 1.6rem;
-        --font-size-lg: 2.3rem;
-        --font-size-xlg: 3rem;
-        --font-size-xxlg: 3.5rem;
+        --font-size-xsm: 0.688rem;
+        --font-size-sm: 0.75rem;
+        --font-size: 0.875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.438rem;
+        --font-size-xlg: 1.875rem;
+        --font-size-xxlg: 2.188rem;
 
         --margin-xsm: 5px;
         --margin-sm: 20px;
@@ -48,13 +48,13 @@
         --ctr-margin: 40px;
         --gap: 30px;
 
-        --font-size-xsm: 1.2rem;
-        --font-size-sm: 1.4rem;
-        --font-size: 1.6rem;
-        --font-size-md: 3.2rem;
-        --font-size-lg: 3.2rem;
-        --font-size-xlg: 3.8rem;
-        --font-size-xxlg: 4.3rem;
+        --font-size-xsm: 0.75rem;
+        --font-size-sm: 0.875em;
+        --font-size: 1rem;
+        --font-size-md: 2rem;
+        --font-size-lg: 2rem;
+        --font-size-xlg: 2.375rem;
+        --font-size-xxlg: 2.688rem;
 
         --margin-xsm: 10px;
         --margin-sm: 20px;
@@ -68,13 +68,13 @@
         --ctr-margin: 120px;
         --gap: 40px;
 
-        --font-size-xsm: 1.2rem;
-        --font-size-sm: 1.4rem;
-        --font-size: 1.6rem;
-        --font-size-md: 2.4rem;
-        --font-size-lg: 2.6rem;
-        --font-size-xlg: 3.8rem;
-        --font-size-xxlg: 5.4rem;
+        --font-size-xsm: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size: 1rem;
+        --font-size-md: 1.5rem;
+        --font-size-lg: 1.625rem;
+        --font-size-xlg: 2.375rem;
+        --font-size-xxlg: 3.375rem;
 
         --margin-xsm: 15px;
         --margin-sm: 25px;

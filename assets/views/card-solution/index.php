@@ -7,6 +7,7 @@
     <?php if (exist($args["pattern"])) :
         include('patterns/card-solution-'.$args["pattern"].'.php');
     endif; ?>
-    <span class="picto arrow-right"></span>
+
+    <?= icon('arrow', 20, 20); ?>
     </a> 
 </div>

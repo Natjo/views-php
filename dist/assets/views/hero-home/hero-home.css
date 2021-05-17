@@ -24,14 +24,14 @@
             grid-column: 1;
         }
     
-    #hero-home svg{
+    #hero-home .corner{
         position: absolute;
         z-index: 1;
         width: 960px;
         height: 960px;
     }
     
-    #hero-home svg path{
+    #hero-home .corner path{
             stroke-width: 2;
             fill: none;
             stroke: var(--color-1);

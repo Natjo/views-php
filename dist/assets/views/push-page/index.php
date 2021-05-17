@@ -8,7 +8,10 @@
                 <div class="text"><?= $args["text"]; ?></div>
             <?php endif; ?>
             <?php if (exist($args["cta-label"])) : ?>
-                <a href="<?= $args["page"]; ?>" class="btn-secondary <?= $args["contrast"]; ?>"><?= $args["cta-label"]; ?></a>
+                <a href="<?= $args["page"]; ?>" class="btn-secondary <?= $args["contrast"]; ?>">
+                <?= $args["cta-label"]; ?>
+                <?= icon('arrow', 20, 20); ?>
+            </a>
             <?php endif; ?>
         </div>
         

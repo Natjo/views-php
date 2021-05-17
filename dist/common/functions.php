@@ -14,6 +14,10 @@ function exist($arg)
     else return false;
 }
 
+function icon($name, $width, $height){
+
+    return '<svg class="icon" width="'.$width.'" height="'.$height.'" aria-hidden="true" viewBox="0 0 20 20"><use xlink:href="/assets/img/icons.svg#'.$name.'"></use></svg>';
+}
 
 /**
  * Views
@@ -25,80 +29,79 @@ function exist($arg)
 
 $json = json_decode(file_get_contents("assets/views.json"), true);
 $views = array();
-$imports = array();
-function views($name, $args = null, $defer = false)
+$links = array();
+
+function views($name, $args = null, $observe = true)
 {
     global $json;
     global $views;
-    global $imports;
+    global $links;
 
     if (!array_key_exists($name, $views)) {
         $views[$name] = array(
             "js" => $json[$name]["js"],
             "css" => $json[$name]["css"],
-            "defer" => $defer
+            "observe" => $observe
         );
        if ($json[$name]["css"]) {
             $file = $json[$name]["css"];
-            $content = file_get_contents($file);
-            
-            // gestion des imports css
-            preg_match_all("/@import url\(\/(.*)\);/U", $content, $matches, PREG_PATTERN_ORDER);
-            foreach ($matches[1] as $val) {
-                if (!in_array($val, $imports)) {
-                    $content .= file_get_contents($val);
-                    array_push($imports, $val);
-                }
-            }
-            $content = preg_replace('/@import url\(\/(.*)\);/', "", $content);
-
-
-           //echo "<style>".$content."</style>";
-
-
-          // echo '<link href="'.$file.'" rel="stylesheet" media="screen"> ';
+            array_push($links, $file);
         }
     }
     include("./assets/views/$name/index.php");
 }
-/*
-function views_preload_css()
-{
-    global $views;
-    foreach ($views as $view) {
-        if ($view["css"]) {
-            echo '<link rel="preload" href="' . $view["css"] . '" as="style">' . "\n";
-        }
-    }
-}*/
-/*
-function views_css()
-{
-    global $views;
-    foreach ($views as $view) {
-        if ($view["css"]) {
-            echo '<link rel="stylesheet" href="' . $view["css"] . '">' . "\n";
-        }
-    }
-}
-*/
+
 function views_js()
 {
     global $views;
     $arr = array();
     foreach ($views as $key => $view) {
-        if ($view["js"] && !$view["defer"]) array_push($arr, $key);
+        if ($view["js"] && !$view["observe"]) array_push($arr, $key);
     }
     return json_encode($arr);
 }
 
 
-function views_defer()
+function views_observe()
 {
     global $views;
     $arr = array();
     foreach ($views as $key => $view) {
-        if ($view["js"] && $view["defer"]) array_push($arr, $key);
+        if ($view["js"] && $view["observe"]) array_push($arr, $key);
     }
     return json_encode($arr);
 }
+
+ob_start();
+
+
+global $isLight;
+views('header', array(
+    "isLight" => $isLight,
+    "items" => array(
+        array(
+            "name" => "À propos",
+            "href" => "a-propos/"
+        ),
+        array(
+            "name" => "Solutions",
+            "href" => "solutions/"
+        ),
+        array(
+            "name" => "Équipe",
+            "href" => "equipe/"
+        ),
+        array(
+            "name" => "Actualités",
+            "href" => "news/"
+        ),
+        array(
+            "name" => "Talents",
+            "href" => "talents/"
+        ),
+        array(
+            "name" => "Contact",
+            "href" => "contact/"
+        )
+    )
+));

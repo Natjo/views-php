@@ -69,21 +69,14 @@
             justify-content: center;
         }
 
-            #header .btn-nav:before {
-                content: "\e90e";
-                font-family: var(--font-icon);
-                color: var(--color-1);
-                font-size: 3.2rem;
+            #header .btn-nav .icon {
+                fill: var(--color-1);
             }
 
             #header .btn-nav.active {
                 background: #fff;
                 border-color: #fff;
             }
-
-                #header .btn-nav.active:before {
-                    content: "\e92a";
-                }
     }
 
     @media (min-width: 992px) {#header {
@@ -157,11 +150,7 @@
 #nav .private_space {
         width: 20px;
         height: 20px;
-        -webkit-mask: url(/assets/img/icon/user.svg);
-                mask: url(/assets/img/icon/user.svg);
-        background-color: var(--color-6);
-  	    -webkit-mask-size: cover;
-  	            mask-size: cover;
+        fill: var(--color-6);
     }
 
 
@@ -232,30 +221,28 @@
             white-space: nowrap;
         }
 
-            #nav .link:after {
-                content: "";
-                display: block;
+            #nav .link .icon{
+                width: 20px;
+                height: 20px;
                 position: absolute;
-                top: 100%;
+                top: calc(100% - 10px);
                 left: 50%;
-                transform: translateX(-50%) translateY(0px) rotate(90deg);
                 opacity: 0;
                 transition: all 0.3s ease;
                 pointer-events: none;
-                -webkit-mask: url(/assets/img/icon/arrow.svg) no-repeat center;
-                        mask: url(/assets/img/icon/arrow.svg) no-repeat center;
-                background: var(--color-1);
-                width: 10px;
-                height: 10px;
+                fill: var(--color-1);
+                transform-origin: center;
+                transform: translateX(-50%) translateY(0) rotate(90deg);
             }
+
             #nav .link:hover,
             #nav .link.active {
                 color: var(--color-1);
             }
-                #nav .link:hover:after, #nav .link.active:after {
-                    transform: translateX(-50%) translateY(5px) rotate(90deg);
-                    opacity: 1;
-                }
+               #nav .link:hover .icon,#nav .link.active .icon{
+                transform: translateX(-50%) translateY(5px) rotate(90deg);
+                opacity: 1;
+               }
         #nav .extra {
             display: flex;
             justify-self: end;

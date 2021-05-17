@@ -20,7 +20,7 @@
             grid-column: 1;
         }
     }
-    svg{
+    .corner{
         position: absolute;
         z-index: 1;
         width: 960px;

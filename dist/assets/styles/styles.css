@@ -1,7 +1,204 @@
-html {
-    font-size: 62.5%;
+undefinedh1, h2, h3, h4{
+	margin: 0;
 }
-body {
+ol, ul{
+	margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+p{
+    margin: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:focus{
+    outline: none;
+}
+img{
+    display: block;
+    margin: 0;
+}
+figure{
+    margin: 0;
+}
+picture{
+    display: block;
+}
+canvas{
+    display: block;
+}
+iframe{
+    display: block;
+	border: 0;
+}
+fieldset{
+    margin: 0;
+    padding: 0;
+	border: 0;
+}
+table{
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody, thead, tr, th, td{
+	padding: 0;
+}
+svg{
+	display: block;
+}
+video{
+    display: block;
+}
+blockquote{
+	margin: 0;
+}
+dl, dd{
+    margin: 0;
+}
+button{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+    background: none;
+    cursor: pointer;
+	padding: 0;
+	border: 0;
+}:root {
+    --ctr-width: 1280px;
+    
+    --font-primary: "Brown", sans-serif;
+    --font-secondary: "Albra", sans-serif;
+
+    --color-0: #fff;
+    --color-1: #e8ae3a;
+    --color-2: #061927;
+    --color-3: #054652;
+    --color-4: #d7dde6;
+    --color-5: #ebf1f9;
+    --color-6: #b1c6d2;
+
+    --color-gray-light: #f5f5f5;
+    --color-gray: #ccc;
+    --color-gray-dark: #555;
+
+    --color-text: #000;
+    --color-error: #ff625a;
+    --color-valid: #054652;
+}
+
+
+@media (max-width: 767px) {
+    :root{
+        --ctr-margin: 20px;
+        --gap: 20px;
+
+        --font-size-xsm: 0.688rem;
+        --font-size-sm: 0.75rem;
+        --font-size: 0.875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.438rem;
+        --font-size-xlg: 1.875rem;
+        --font-size-xxlg: 2.188rem;
+
+        --margin-xsm: 5px;
+        --margin-sm: 20px;
+        --margin: 20px;
+        --margin-lg: 40px;
+        --margin-xlg: 60px;
+    }
+}
+
+@media (min-width: 768px) AND (max-width: 991px) {
+    :root {
+        --ctr-margin: 40px;
+        --gap: 30px;
+
+        --font-size-xsm: 0.75rem;
+        --font-size-sm: 0.875em;
+        --font-size: 1rem;
+        --font-size-md: 2rem;
+        --font-size-lg: 2rem;
+        --font-size-xlg: 2.375rem;
+        --font-size-xxlg: 2.688rem;
+
+        --margin-xsm: 10px;
+        --margin-sm: 20px;
+        --margin: 40px;
+        --margin-lg: 60px;
+        --margin-xlg: 80px;
+    }
+}
+@media (min-width: 992px) {
+    :root {
+        --ctr-margin: 120px;
+        --gap: 40px;
+
+        --font-size-xsm: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size: 1rem;
+        --font-size-md: 1.5rem;
+        --font-size-lg: 1.625rem;
+        --font-size-xlg: 2.375rem;
+        --font-size-xxlg: 3.375rem;
+
+        --margin-xsm: 15px;
+        --margin-sm: 25px;
+        --margin: 45px;
+        --margin-lg: 65px;
+        --margin-xlg: 85px;
+    }
+}/* Albra */
+@font-face {
+    font-family: 'Albra', Arial;
+    src: url(/assets/fonts/Albra-Semi.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Albra', Arial;
+    src: url(/assets/fonts/Albra-Bold.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Brown */
+@font-face {
+    font-family: 'Brown', Arial;
+    src: url(/assets/fonts/BrownLLWeb-Light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Brown', Arial;
+    src: url(/assets/fonts/BrownLLWeb-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Brown', Arial;
+    src: url(/assets/fonts/BrownLLWeb-Italic.woff2) format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Brown', Arial;
+    src: url(/assets/fonts/BrownLLWeb-Bold.woff2) format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Brown', Arial;
+    src: url(/assets/fonts/BrownLLWeb-BoldItalic.woff2) format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}body {
    /* -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;*/
     margin: 0;
@@ -10,8 +207,7 @@ body {
     color: var(--color-text);
     font-weight: 300;
     line-height: 1.4;
-}
-body.hasPopin {
+}body.hasPopin {
         height: 100vh;
         overflow: hidden !important;
         position: relative;
@@ -23,16 +219,16 @@ address {
     font-style: normal;
 }
 
+address .icon{
+        position: absolute;
+        left: 0;
+        fill: var(--color-1);
+    }
+
 address > div {
         position: relative;
         padding-left: 30px;
     }
-
-address > div .icon{
-            position: absolute;
-            left: 0;
-            fill: var(--color-1);
-        }
 
 address > div:not(:last-of-type) {
             margin-bottom: 20px;
@@ -132,8 +328,7 @@ main > article {
         width: 14px;
         height: 14px;
         color: var(--color-1);
-        -webkit-mask: url(/assets/img/icon/arrow.svg) ;
-                mask: url(/assets/img/icon/arrow.svg) ;
+       /* mask: url(/assets/img/icon/arrow.svg) ;*/
         background-color: var(--color-1);
         -webkit-mask-repeat: no-repeat;
                 mask-repeat: no-repeat;
@@ -209,33 +404,21 @@ main > article {
     grid-template-columns: max-content 15px 60px;
     align-items: center;
 }
-.btn-secondary:before, .btn-secondary:after{
-        content:"";
-        grid-column: 3;
-        grid-row: 1;
-        transition: all 0.25s ease;
-    }
-.btn-secondary:before{
+.btn-secondary .icon{
+        width: 60px;
+        height: 60px;
         border: 3px solid var(--color-1);
         border-radius: 50%;
         box-sizing: border-box;
-    }
-.btn-secondary:after {
-        -webkit-mask: url(/assets/img/icon/arrow.svg) ;
-                mask: url(/assets/img/icon/arrow.svg) ;
-        background-color: var(--color-1);
-        -webkit-mask-repeat: no-repeat;
-                mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-                mask-position: center;
-  	    -webkit-mask-size: 12px;
-  	            mask-size: 12px;
-        will-change: transform;
+        grid-column: 3;
+        grid-row: 1;
+        transition: all 0.25s ease;
+        fill: var(--color-1);
     }
 .btn-secondary:hover {
         color: var(--color-1);
     }
-.btn-secondary:hover:after,.btn-secondary:hover:before {
+.btn-secondary:hover .icon {
             transform: scale(1.1);
         }
 .btn-secondary.light {
@@ -252,13 +435,13 @@ main > article {
             color: var(--color-3);
         }
 @media (max-width: 767px) {
-        .btn-secondary:after, .btn-secondary:before {
+        .btn-secondary .icon {
             height: 47px;
             width: 47px;
         }
     }
 @media (min-width: 768px) {
-        .btn-secondary:after, .btn-secondary:before {
+        .btn-secondary .icon {
             height: 60px;
             width: 60px;
         }
@@ -385,49 +568,7 @@ main > article {
         }
 
 /* picto */
-.picto {
-    width: 32px;
-    height: 32px;
-    background: #fff;
-    border-radius: 50%;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-1);
-}
-.picto:before {
-        content: "";
-        width: 32px;
-        height: 32px;
-        background-color: var(--color-1);
-    }
-.picto.plus:before {
-            content: "\e911";
-        }
-.picto.arrow-right:before {
-            -webkit-mask: url(/assets/img/icon/arrow.svg) no-repeat center;
-                    mask: url(/assets/img/icon/arrow.svg) no-repeat center;
-            -webkit-mask-size: 10px;
-                    mask-size: 10px;
-        }
-.picto.linkedin:before {
-            content: "\e92c";
-        }
-.picto.mail:before {
-            content: "\e92d";
-        }
-.picto.download:before {
-            content: "\e90a";
-        }
-.picto.dark {
-        border: 2px solid var(--color-3);
-        color: var(--color-3);
-    }
-.picto.light {
-        background: var(--color-1);
-        color: #fff;
-    }
+
 
 /* bg animate */
 .bgAnimate {
